@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TO DO -lista</title>
+    <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
-    
+    <h2>Start listing</h2>
+    <form id="listaan"><br>
+ 
+        <textarea id="mainTehtava" placeholder="What needs to be done?" rows="1"></textarea><br>
+    <input type="text" id="tehtava">
+        <input onclick="lisaaListaan()" type="button" value="Save" />
+    <button id="poista" type="button" abled>Delete</button> <!-- show-popover? -->
+    </form>
+
+<!-- Listausnäkymä-->
+     <table id="lista" class="display">
+        <thead>
+        <tr>
+            <th>TO DO</th>
+            <td></td>
+        </tr>
+    </thead>
+    </table>
+    <script src="js/javascript.js"></script>
 </body>
 </html>
