@@ -1,8 +1,85 @@
 // Javascript jutut
 
-// Muokkaa niin, että ensin kysytään tehtävän "pääotsikko" ja sitten lisätään kohtia siihen
+// Muokkaa niin, että ensin kysytään tehtävän "pääotsikko" ja sitten lisätään kohtia siihen + muokkausvaihtoehto
 
-// Lisää rivi taulukkoon
+
+function lisaaListaan() {
+    let mainTehtava = document.querySelector("#mainTehtava").value
+    let lisays = document.querySelector("#lisays").value
+    console.log (mainTehtava, lisays)
+
+    const lista = document.querySelector("#lista"); // koko muuttujaa ei voi vaihtaa
+    
+    if(mainTehtava) {
+        let rivi1 = lista.insertRow(); //lisää rivi
+        let solu1 = rivi1.insertCell(0); //lisää solu
+        let solu2 = rivi1.insertCell(1); //lisätään toinen solu (jätetään check markille eka solu)
+        solu2.textContent = mainTehtava; // solun sisältö on mainTehtava
+    }
+
+    if(lisays) {
+        let lisaRivi = lista.insertRow();
+        let lisaSolu = lisaRivi.insertCell(0);
+        let tsekkaus = document.createElement("input");
+        tsekkaus.type = "checkbox";
+        lisaSolu.appendChild(tsekkaus);
+        let lisaSolu2 = lisaRivi.insertCell(1);
+        lisaSolu2.textContent = lisays;
+    }
+
+    document.querySelector("#mainTehtava").value = ""; 
+    document.querySelector("#lisays").value = ""; } // tyhjennetään kenttä
+
+// Lisätään kuuntelija checkboxeille, kun merkattu tehdyksi / kun merkkaus poistetaan
+    lista.addEventListener("change", function(merkattu) {
+    if (merkattu.target.type === "checkbox") {
+        const rivi = merkattu.target.closest("tr"); /*Tässä chatGPT auttoi, että löytyy oikea solu*/
+        const tekstiSolu = rivi.cells[1];
+
+        // jos tsekkaus on checked
+        if (merkattu.target.checked) {
+            tekstiSolu.style.textDecoration = "line-through"; //vedetään teksti yli
+            tekstiSolu.style.backgroundColor = "rgb(197, 223, 231)"; // vaihdetaan tekstin taustaväri
+            rivi.style.backgroundColor = "rgb(197, 223, 231)"; // vaihdetaan checkboksin taustaväri
+        }
+        // muutoin
+        else {
+            tekstiSolu.style.textDecoration = "none"; // poistetaan yliviivaus
+            tekstiSolu.style.backgroundColor = "#EAF6FF"; // vaihdetaan taustaväri takaisin alkuperäiseen
+            rivi.style.backgroundColor = "#EAF6FF"; // sama kuin yllä
+        }
+    }
+});
+
+
+
+// Muokataan painikkeille kuuntelijat, jotka reagoivat, kun hiiri menee napin päälle/poistuu päältä
+let tallennaNappi = document.querySelector("#tallennaNappi")
+tallennaNappi.addEventListener("mouseenter", function() {
+    tallennaNappi.style.backgroundColor="#b990fa";})
+
+    tallennaNappi.addEventListener("mouseleave", function() {
+    tallennaNappi.style.backgroundColor="#c0b1da";
+})
+
+let lisaaNappi = document.querySelector("#lisaaNappi")
+lisaaNappi.addEventListener("mouseenter", function() {
+    lisaaNappi.style.backgroundColor="#afe962";})
+
+    lisaaNappi.addEventListener("mouseleave", function() {
+    lisaaNappi.style.backgroundColor="#d8ffa4";
+})
+
+let poistaNappi = document.querySelector("#poistaNappi")
+poistaNappi.addEventListener("mouseenter", function() {
+    poistaNappi.style.backgroundColor="rgb(236, 68, 63)";})
+
+    poistaNappi.addEventListener("mouseleave", function() {
+    poistaNappi.style.backgroundColor="#f86d68";
+})
+
+
+/* // Lisää rivi taulukkoon
 function lisaaListaan() {
     let mainTehtava = document.querySelector("#mainTehtava").value
     let tehtava = document.querySelector("#tehtava").value
@@ -16,13 +93,13 @@ function lisaaListaan() {
         solu1.textContent = mainTehtava; // solun sisältö on mainTehtava
     }
 
-    if(tehtava) {
+   if(tehtava) {
         let rivi2 = lista.insertRow();
         let solu2 = rivi2.insertCell(0);
         solu2.textContent = tehtava;}
 
     document.querySelector("#mainTehtava").value = ""; // tyhjennetään kenttä
-    document.querySelector("#tehtava").value = "";}
+    document.querySelector("#tehtava").value = "";} */
 
 
 
