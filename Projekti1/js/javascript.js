@@ -4,6 +4,8 @@
 // Lisää:
 // - poistomahis (muokkausmahis, siirtomahis?)
 // - virheilmoitus virheellisestä syötteestä ja ko. tekstikentän korostus
+// - enterillä syötteen vastaanotto?
+
 // entä jos kaikki tehtävät listalta on tehty, mitä listalle tapahtuu?
 
 // Extraa:
