@@ -30,7 +30,7 @@ function luoLista() {
 
     let otsikonPaikka = uusiLista.createTHead(); /*paikka otsikolle*/
     let rivi = otsikonPaikka.insertRow(); /*rivi taulukkoon*/
-    let otsikonSolu = rivi.insertCell(0);
+    let otsikonSolu = rivi.insertCell(0); /*solu riville */
     otsikonSolu = document.createElement("th") /*Tehdään otsikkoSolusta th, jotta saadaan erotettua tämän teksti tehtävien tekstistä (muotoilun vuoksi)*/
     otsikonSolu.textContent = mainTehtava; /* saadaan syötetty otsikko soluun*/
     rivi.appendChild(otsikonSolu);
