@@ -1,65 +1,99 @@
 // Javascript jutut
+// tulee käytettyä // ja /* */, kun on tehnyt myös CSS:ää - onko merkitystä?
 
-// Muokkaa niin, että ensin kysytään tehtävän "pääotsikko" ja sitten lisätään kohtia siihen + muokkausvaihtoehto
+// Lisää:
+// - poistomahis (muokkausmahis, siirtomahis?)
+// - virheilmoitus virheellisestä syötteestä ja ko. tekstikentän korostus
+// entä jos kaikki tehtävät listalta on tehty, mitä listalle tapahtuu?
+
+// Extraa:
+// - alasvetovalikko kaikista listoista otsikoineen?
+// - piilottaa / näyttää elementtejä (esim. tehtävienlisäys vasta otsikon jälkeen?)
+// - laskuri auki olevista tehtävistä tai listoista?
+// - HTML5 drag&drop
+// - napit joka näyttää, esim. vain tehdyt, vain tekemättömät ja kaikki
+
+// BOOTSTRAPia saa käyttää!
 
 
+// muista tämä: e.preventDefault(); // Estetään lomakkeen oletustapahtuma (sivun lataus)
+
+
+// Luodaan lista otsikolla
+function luoLista() {
+    let mainTehtava = document.querySelector("#mainTehtava").value; /*otetaan kenttään syötetty sisältö*/
+    if (mainTehtava === "") return; /* jos kenttä on tyhjä, ei tehdä mitään*/
+
+    let uusiLista = document.createElement("table"); /*luodaan uusi listaustaulukko*/
+
+    let otsikonPaikka = uusiLista.createTHead(); /*paikka otsikolle*/
+    let rivi = otsikonPaikka.insertRow(); /*rivi taulukkoon*/
+    let otsikonSolu = rivi.insertCell(0);
+    otsikonSolu = document.createElement("th") /*Tehdään otsikkoSolusta th, jotta saadaan erotettua tämän teksti tehtävien tekstistä (muotoilun vuoksi)*/
+    otsikonSolu.textContent = mainTehtava; /* saadaan syötetty otsikko soluun*/
+    rivi.appendChild(otsikonSolu);
+
+    // Luodaan listaan paikka tehtävien lisäykselle
+    let tehtavienPaikka = document.createElement("tbody");
+    uusiLista.appendChild(tehtavienPaikka);
+
+    let listojenPaikka = document.querySelector(".container2"); /*osoitetaan listojen paikka (missä tulee näkymään)*/
+    listojenPaikka.appendChild(uusiLista);
+
+    document.querySelector("#mainTehtava").value = ""; /* tyhjennetään kenttä */
+
+    // Lisätään kuuntelija tarkistamaan checkboxin muutosta
+    uusiLista.addEventListener("change", function(merkattu) {
+        if (merkattu.target.type === "checkbox") {
+            const rivi = merkattu.target.closest("tr"); /*Tässä chatGPT auttoi, että löytyy oikea solu*/
+            const tekstiSolu = rivi.cells[1];
+
+            // jos tsekkaus on checked
+            if (merkattu.target.checked) {
+                tekstiSolu.style.textDecoration = "line-through"; //vedetään teksti yli
+                tekstiSolu.style.backgroundColor = "rgb(197, 223, 231)"; // vaihdetaan tekstin taustaväri
+                rivi.style.backgroundColor = "rgb(197, 223, 231)"; // vaihdetaan checkboksin taustaväri
+            }
+            // muutoin
+            else {
+                tekstiSolu.style.textDecoration = "none"; // poistetaan yliviivaus
+                tekstiSolu.style.backgroundColor = "#EAF6FF"; // vaihdetaan taustaväri takaisin alkuperäiseen
+                rivi.style.backgroundColor = "#EAF6FF"; // sama kuin yllä
+            }
+        }
+    });
+}
+
+// Luodaan tehtäviä listaan
 function lisaaListaan() {
-    let mainTehtava = document.querySelector("#mainTehtava").value
-    let lisays = document.querySelector("#lisays").value
-    console.log (mainTehtava, lisays)
+    let lisays = document.querySelector("#lisays").value // valitaan kenttään syötetty sisältö
+    if(lisays === "") return; // jos kenttä tyhjä, ei tehdä mitään
 
-    const lista = document.querySelector("#lista"); // koko muuttujaa ei voi vaihtaa
+    let listat = document.querySelectorAll(".container2 table") // valitaan kaikki listat
+    let viimeisinLista = listat[listat.length -1]; // valitaan viimeisin luotu lista
+    let kohta = viimeisinLista.querySelector("tbody") // valitaan kohta, johon tehtävät lisätään
+
+    // Tehdään oma kohta checkboksille ja lisätään se tehtävän kanssa taulukkoon
+    let lisaRivi = kohta.insertRow();
+    let lisaSolu = lisaRivi.insertCell(0);
+    let tsekkaus = document.createElement("input");
+    tsekkaus.type = "checkbox";
+    lisaSolu.appendChild(tsekkaus);
+    let lisaSolu2 = lisaRivi.insertCell(1);
+    lisaSolu2.textContent = lisays;
     
-    if(mainTehtava) {
-        let rivi1 = lista.insertRow(); //lisää rivi
-        let solu1 = rivi1.insertCell(0); //lisää solu
-        let solu2 = rivi1.insertCell(1); //lisätään toinen solu (jätetään check markille eka solu)
-        solu2.textContent = mainTehtava; // solun sisältö on mainTehtava
-    }
-
-    if(lisays) {
-        let lisaRivi = lista.insertRow();
-        let lisaSolu = lisaRivi.insertCell(0);
-        let tsekkaus = document.createElement("input");
-        tsekkaus.type = "checkbox";
-        lisaSolu.appendChild(tsekkaus);
-        let lisaSolu2 = lisaRivi.insertCell(1);
-        lisaSolu2.textContent = lisays;
-    }
-
-    document.querySelector("#mainTehtava").value = ""; 
-    document.querySelector("#lisays").value = ""; } // tyhjennetään kenttä
-
-// Lisätään kuuntelija checkboxeille, kun merkattu tehdyksi / kun merkkaus poistetaan
-    lista.addEventListener("change", function(merkattu) {
-    if (merkattu.target.type === "checkbox") {
-        const rivi = merkattu.target.closest("tr"); /*Tässä chatGPT auttoi, että löytyy oikea solu*/
-        const tekstiSolu = rivi.cells[1];
-
-        // jos tsekkaus on checked
-        if (merkattu.target.checked) {
-            tekstiSolu.style.textDecoration = "line-through"; //vedetään teksti yli
-            tekstiSolu.style.backgroundColor = "rgb(197, 223, 231)"; // vaihdetaan tekstin taustaväri
-            rivi.style.backgroundColor = "rgb(197, 223, 231)"; // vaihdetaan checkboksin taustaväri
-        }
-        // muutoin
-        else {
-            tekstiSolu.style.textDecoration = "none"; // poistetaan yliviivaus
-            tekstiSolu.style.backgroundColor = "#EAF6FF"; // vaihdetaan taustaväri takaisin alkuperäiseen
-            rivi.style.backgroundColor = "#EAF6FF"; // sama kuin yllä
-        }
-    }
-});
-
+ 
+    document.querySelector("#lisays").value = "";
+}  // tyhjennetään kenttä
 
 
 // Muokataan painikkeille kuuntelijat, jotka reagoivat, kun hiiri menee napin päälle/poistuu päältä
-let tallennaNappi = document.querySelector("#tallennaNappi")
-tallennaNappi.addEventListener("mouseenter", function() {
-    tallennaNappi.style.backgroundColor="#b990fa";})
+let uusiNappi = document.querySelector("#uusiNappi")
+uusiNappi.addEventListener("mouseenter", function() {
+    uusiNappi.style.backgroundColor="#b990fa";})
 
-    tallennaNappi.addEventListener("mouseleave", function() {
-    tallennaNappi.style.backgroundColor="#c0b1da";
+    uusiNappi.addEventListener("mouseleave", function() {
+    uusiNappi.style.backgroundColor="#c0b1da";
 })
 
 let lisaaNappi = document.querySelector("#lisaaNappi")
@@ -77,29 +111,6 @@ poistaNappi.addEventListener("mouseenter", function() {
     poistaNappi.addEventListener("mouseleave", function() {
     poistaNappi.style.backgroundColor="#f86d68";
 })
-
-
-/* // Lisää rivi taulukkoon
-function lisaaListaan() {
-    let mainTehtava = document.querySelector("#mainTehtava").value
-    let tehtava = document.querySelector("#tehtava").value
-    console.log (mainTehtava, tehtava)
-
-    const lista = document.querySelector("#lista"); // koko muuttujaa ei voi vaihtaa
-    
-    if(mainTehtava) {
-        let rivi1 = lista.insertRow(); //lisää rivi
-        let solu1 = rivi1.insertCell(0); //lisää solu
-        solu1.textContent = mainTehtava; // solun sisältö on mainTehtava
-    }
-
-   if(tehtava) {
-        let rivi2 = lista.insertRow();
-        let solu2 = rivi2.insertCell(0);
-        solu2.textContent = tehtava;}
-
-    document.querySelector("#mainTehtava").value = ""; // tyhjennetään kenttä
-    document.querySelector("#tehtava").value = "";} */
 
 
 
