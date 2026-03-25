@@ -1,0 +1,237 @@
+/*CSS jutut*/
+
+/*värejä talteen
+
+vihreä #65b300
+koralli #f86d68
+lila #8760c5
+vaaleanlila #d5c4ee
+vaalein vpun #ffe7f1
+tummempi vpun #ffcbc9
+
+*/
+
+/* Taustan väri ja responsiivisuus eri näyttökooille */
+body {
+    background-color: #ffe7f1;
+    background-image: url("../assets/postit.jpg"); /* Lisätty taustakuva, joka toistuu*/
+    background-repeat: repeat;
+    background-size: 500px;
+    color: #4A4A4A;
+    justify-content:flex-start;  
+}
+
+/* Otsikoiden / tekstin värit, varjostus, alleviivaus */
+h1 {
+    color: #835dc0;
+    font-weight: bold;
+    text-shadow: 1px 1px 25px rgba(255, 255, 255, 0.5);
+    text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: #9466df;
+    text-shadow: 1px 1px 50px rgba(0,0,0,0.5);
+}
+
+.card.text-center {
+    background-color: #ffe7f1;
+}
+
+.nav-link.active {
+ background-color: #d5c4ee !important; /* important, jotta saan kirjoitettua bootstrapin yli*/
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #ffcbc9;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #d5c4ee !important;
+    border: 2px solid #ffcbc9 !important;
+    border-bottom: 2px solid #d5c4ee !important; /* blendaa korttiin */
+}
+
+/* Luotu parit containerit ympäröimään formia ja tablea, värit yms. niihin*/
+.container {
+    background-color: #ffe7f1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.listanPaikka {
+    background-color: #d5c4ee;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/*.container2 {
+    background-color: #d5c4ee;
+    border: 1px solid;
+    border-color:#d3bff1;
+    border-width: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}*/
+
+/* Eri osoiden värien ja reunojen muotoilua (lomakkeen, nappien, tekstiosioiden)  */
+#mainTehtava {
+    color:#65b300;
+    font-weight: bold;
+    background-color:  rgb(237, 235, 238);
+    padding: 8px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: #8760c5;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ChatGPT auttoi saamaan formin reunojen värin muutettua mustasta lilaksi, kun kenttä on aktiivisena*/
+#mainTehtava:focus {
+    border-color: #8760c5;
+    border-width: 2.5px;
+    outline: none;
+}
+
+#tehtava {
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    background-color: rgb(197, 223, 231);
+    border: 1px solid rgb(255, 102, 0);
+}
+
+#lisays {
+    color:#f86d68;
+    font-weight: bold;
+    background-color:  rgb(237, 235, 238);
+    padding: 8px;
+    border-radius: 6px;
+    border-color: #8760c5;
+    margin-top: 10px;
+}
+
+#lisays:focus {
+    border-color: #65b300;
+    border-width: 2.5px;
+    outline: none;
+}
+
+.lista-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1 1 33%;
+    min-width: 250px;
+    max-width: 33%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.lista-wrapper table {
+    width: 100%;
+    min-height: 150px;
+    border-collapse: collapse;
+    background-color: #EAF6FF;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+#uusiNappi {
+    color:#ffffff;
+    font-weight: bold;
+    background-color: #b990fa;
+    border-color:#8760c5;
+    padding: 10px;
+    border-radius: 80px;
+    margin: 10px;
+}
+
+#lisaaNappi {
+    color:#000000;
+    font-weight: bold;
+    background-color: #afe962;
+    border-color:#acf34e;
+    padding: 10px 15px;
+    border-radius: 80px;
+    margin: 15px;
+}
+
+#poistaNappi {
+    color:#292727;
+    font-weight: bold;
+    background-color: #f86d68;
+    border-color: #eb4842;
+    padding: 10px 15px;
+    border-radius: 80px;
+}
+
+#resetNappi{
+    color:#292727;
+    font-weight: bold;
+    background-color: #65f56f;
+    border-color: #68be68;
+    padding: 10px 15px;
+    border-radius: 80px;
+}
+
+#poistaTehtNappi {
+    color:#292727;
+    font-weight: bold;
+    background-color: #f86d68;
+    border-color: #eb4842;
+    padding: 10px 15px;
+    border-radius: 80px;
+    margin: 10px;
+}
+
+#lista {
+    color:#f86d68;
+}
+
+.container2 table {
+    border-collapse: collapse;
+    background-color: #EAF6FF;
+    min-width: 250px;
+    min-height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+td {
+    border: 2px solid #8760c5;
+    width: 15px;
+    padding: 10px;
+    color:#f86d68;
+    font-weight: bolder;
+}
+
+th {
+    border: 2px solid #8760c5;
+    padding: 10px;
+    color:#65b300;
+    font-size: bold;
+    text-transform: uppercase;
+}
+
+/*Piilotetaan alkuun lisäys ja sen painike*/
+#lisays, #lisaaNappi {
+    display: none;
+}
+
+#palauteLomake {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content:flex-start; 
+}
