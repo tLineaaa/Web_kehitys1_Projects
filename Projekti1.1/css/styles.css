@@ -27,6 +27,7 @@ h1 {
     text-shadow: 1px 1px 25px rgba(255, 255, 255, 0.5);
     text-decoration: underline;
     text-align: center;
+    margin-top: 10px;
 }
 
 h2 {
@@ -34,6 +35,12 @@ h2 {
     text-shadow: 1px 1px 50px rgba(0,0,0,0.5);
     margin: 20px;
 }
+
+h4 {
+    color: #9466df;
+    text-shadow: 1px 1px 50px rgba(0,0,0,0.5);
+}
+
 
 .card.text-center {
     background-color: #ffe7f1;
