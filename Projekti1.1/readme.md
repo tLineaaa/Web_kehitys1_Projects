@@ -41,7 +41,15 @@ Erityisesti tykkäsin oppia, miten tarkistetaan jokin asia niin, että se toimii
 Hieman epäselvää on vielä Local Storagen käyttöönotto. Nyt sain sen toimimaan ChatGPT:n avustuksella.  
 Voi olla, että tarvitsee muutamat kerrat itse tehdä, jotta alkaa sujumaan kunnolla.  
 
-Antaisin itselleni pisteitä: xx/yy p.
+Antaisin itselleni pisteitä:  
+- koodi on kommentoitu 1p.  
+- toiminnallisuus täyttää vaatimukset ja toimii virheittä 3p.  
+- ulkoasu on viimeistelty 1p. 
+- koodi on julkaistu GitHubissa + readme.md-tiedosto on luotu 2p.  
+- sovellus on julkaistu Netlifyssä 2p.  
+- videodemo on tehty 2p.  
+
+ 10/10 p.
 
 ## Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka
 Kurssi on ollut mielenkiintoinen ja tämä projekti oli mielestäni sopiva osaamistasoon nähden.  
@@ -72,8 +80,8 @@ sillä "lisää"-painike ei tunnu aina toimivan.
 
 ## Kuvakaappaukset
 
-Etusivun malli, listojen lisäys ja poisto, checkboxit  
-![Etusivun malli, listojen lisäys ja poisto, checkboxit](assets/image.png)  
+Etusivun malli: listojen lisäys ja poisto, checkboxit  
+![Etusivun malli: listojen lisäys ja poisto, checkboxit](assets/image.png)  
 
 Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa  
 ![Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa](assets/image-1.png)  
