@@ -1,13 +1,13 @@
 <h1> To do -lista 1.1 </h1>
-Web kehitys 1 (FRONT END)- kurssin ensimmäisen projektin työstöä
+Web kehitys 1 (FRONT END)- kurssin ensimmäisen projektin työstöä  
 
 
-Luodaan yksinkertainen to do -lista  
-Hyödynnetään DOM-skriptausta  
-Julkaistaan Netlify-palvelussa  
+- Luodaan yksinkertainen to do -lista  
+- Hyödynnetään DOM-skriptausta  
+- Julkaistaan Netlify-palvelussa  
 
 ## Projektin nimi ja tekijät
-### Projekti 1.1. To do-lista DOM-skriptauksella  
+Projekti 1.1. To do-lista DOM-skriptauksella  
 Taru Laine
 
 ## Verkkolinkit:
@@ -15,7 +15,7 @@ Pääset julkaistuun sovellukseen käsiksi osoitteessa: https://todolinea.netlif
 Projektin videoesittelyn url toimitettu palautuksen kommenttikentässä.
 
 ## Oma arvio työstä ja oman osaamisen kehittymisestä
-Mielestäni onnistuin kaikenkaikkiaan projektissa hyvin.  
+Mielestäni onnistuin kaiken kaikkiaan projektissa hyvin.  
 Vaatimusten mukaan käytin vain "natiivi" JavaScriptiä ja sovellus sisältää DOM-skriptausta  
 sekä lomakketta ja muita syöttökenttiä. Myös muut vaatimukset täyttyvät.  
 Lisäksi sovellus sisältää ylimääräisiä elementtejä eli sovellusta on työstetty enemmän,  
@@ -45,7 +45,7 @@ Antaisin itselleni pisteitä: xx/yy p.
 
 ## Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka
 Kurssi on ollut mielenkiintoinen ja tämä projekti oli mielestäni sopiva osaamistasoon nähden.  
-Oppimistani tukisi parityöskentely, johon meillä on kyllä mahdollisuus, jos löytää omatoimisesti parin.
+Oppimistani tukisi parityöskentely, johon meille on annettukin mahdollisuus.
 
 ## Sisällysluettelo:
 - [Tietoja sovelluksesta](#tietoja-sovelluksesta)
@@ -60,7 +60,9 @@ Oppimistani tukisi parityöskentely, johon meillä on kyllä mahdollisuus, jos l
 ## Tietoja sovelluksesta
 Projekti 1.1 To Do -lista DOM-skriptauksella on sovellus, johon voit kirjata muistettavia asioita kuten  
 ostoslista, siivouslista tai vaikka pakattavat reissutarvikkeet.  
-Voit merkitä tehdyt kohdat checkboxin avulla sekä voit poistaa listoja.  
+
+Voit merkitä tehdyt kohdat checkboxin avulla sekä voit poistaa listoja. 
+
 Halutessasi voit tarkastella ainoastaan aktiivisia listojasi tai tehtyjä listojasi tai kaikkia listoja samaan aikaan.  
 Lisäksi voit lähettää palautetta, esim. sovelluksen toimivuudesta.  
 
@@ -71,10 +73,10 @@ sillä "lisää"-painike ei tunnu aina toimivan.
 ## Kuvakaappaukset
 
 Etusivun malli, listojen lisäys ja poisto, checkboxit  
-![Etusivun malli, listojen lisäys ja poisto, checkboxit](/assets/image.png)  
+![Etusivun malli, listojen lisäys ja poisto, checkboxit](assets/image.png)  
 
 Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa  
-![Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa](/assets/image-1.png)  
+![Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa](assets/image-1.png)  
 
 Kuvat: Taru Laine  
 
@@ -87,7 +89,7 @@ Pääpaino on kuitenkin JavaScriptissä, joka hoitaa painikkeiden ja kenttien ta
 
 ## Asennus
 Sovellus toimii suoraan Netlifyssä: [To Do -app / Linea](https://todolinea.netlify.app/)  
-Klikka yllä olevaa linkkiä, jonka jälkeen voit alkaa luomaan listoja.  
+Klikkaa yllä olevaa linkkiä, jonka jälkeen voit alkaa luomaan listoja.  
 
 Kirjoita listan pääotsikko kohtaan "Listan nimi" ja klikkaa "Luo uusi lista"-painiketta.  
 Nyt voit tarkentaa listaa kirjaamalla tehtäviä "Lisää tehtävä listaan"-osioon ja klikkaamalla "Lisää"-painiketta.  
@@ -104,10 +106,11 @@ Voit myös lähettää palautetta sovelluksesta ja seurata erikseen aktiivisia l
 Hyödynsin projektin teossa Laurean Web-kehitys 1 (front end)-kurssin kurssimateriaalia  
 sekä omaa aiempaa [websivusto-projektiani](https://github.com/tLineaaa/Websovellukset/tree/main/WS07_oma_sivu)  
 
-Käytin ChatGPT:tä kirjoitusvirheiden löytämiseksi sekä mm. Local Storagen toimintaan saattamisessa.  
+Käytin ChatGPT:tä debuggauksessa, esim. bongatakseni kirjoitusvirheet,  
+jotka rikkoivat koodin toimintaa sekä Local Storagen toimintaan saattamisessa.  
 Kommenteissa on mainittu muutamat muut kohdat, joissa chatGPT on auttanut löytämään oikean kohdan tai neuvonut, kuinka, esim. Bootstrapin muotoilu ohitetaan.  
 
-Hyödynsin myös vinkkejä sivustoilta  
+Hyödynsin myös vinkkejä ja keskusteluja sivustoilta:  
 [GitHub Docs](https://docs.github.com/en)  
 [Bootstrap](https://getbootstrap.com/)  
 [Stack Overflow questions](https://stackoverflow.com/questions)  

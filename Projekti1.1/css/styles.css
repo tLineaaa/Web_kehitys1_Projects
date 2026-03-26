@@ -47,7 +47,7 @@ h4 {
 }
 
 .nav-link.active {
- background-color: #d5c4ee !important; /* important, jotta saan kirjoitettua bootstrapin yli*/
+ background-color: #d5c4ee !important; /* important, jotta saan kirjoitettua bootstrapin yli (ChatGPT)*/
 }
 
 .nav-tabs {
