@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body id="palaute">
+<body id="palauteSivu">
         <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
@@ -31,13 +31,16 @@
 </div>
 <form id="palauteLomake" >
   <div class="mb-3">
+    <div id="onnistunutViesti"></div>
     <h2 class = text-center>Anna palautetta</h2>
   <label for="exampleFormControlInput1" class="form-label">Email:</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="sähköposti@esimerkki.com">
+    <input id="sahkoposti" type="text" class="form-control" placeholder="sähköposti@esimerkki.com">
+    <div id="sapoVirheViesti"></div>
   </div>
   <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Palautteesi:</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <textarea id="palaute" class="form-control" rows="3"></textarea>
+  <div id="palauteVirheViesti"></div>
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">

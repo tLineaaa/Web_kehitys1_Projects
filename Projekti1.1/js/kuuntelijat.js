@@ -246,11 +246,6 @@ if (resetNappi) {
 });
 }
 
-//// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-///////////////////////////////////////
-
 // Kun sivu ladataan (avataan, esim. käynti index.htmlstä done.htmlään ja takaisin, niin sitten:)
 window.onload = function() {
     const kaikkiListat = haeTallennetut();
@@ -379,3 +374,66 @@ window.onload = function() {
 
         document.querySelector(".listanPaikka").appendChild(listaWrapper);
     });}
+
+// Tarkistetaan syötteet
+let palauteLomake = document.querySelector("#palauteLomake");
+let sahkoposti = document.querySelector("#sahkoposti");
+let palaute = document.querySelector("#palaute");
+let sapoVirheViesti = document.querySelector("#sapoVirheViesti");
+let palauteVirheViesti = document.querySelector("#palauteVirheViesti");
+let onnistunutViesti = document.querySelector("#onnistunutViesti");
+
+// Jos löytyy kohta sahkoposti+palaute+palauteLomake, lisätään kuuntelija palauteLomakkeen submittaamiseen
+    if(sahkoposti && palaute && palauteLomake) {
+        palauteLomake.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let sahkopostiSyote = sahkoposti.value; // sähköpostiin syötetty teksti
+            let palauteSyote = palaute.value.trim();
+            let virhe = false; // virhe epätosi / tosi vaikuttaa siihen, mitä tehdään
+
+            sapoVirheViesti.textContent = "";
+            palauteVirheViesti.textContent = "";
+
+            if (!sahkopostiSyote.includes("@")) { // jos sapo ei sisällä @-merkkiä, herjaa
+                sapoVirheViesti.textContent = "Syötä sähköposti oikeassa muodossa";
+                sahkoposti.style.borderColor = "red"; // muuta sapon syötekentän reunat ja kenttä punaiseksi
+                sahkoposti.style.backgroundColor = "#ffcbc9";
+                virhe = true;
+            } else { // palautetaan värit oletukseen
+                sahkoposti.style.borderColor = "";
+                sahkoposti.style.backgroundColor = "";
+            }
+
+            if (palauteSyote.length < 3) {
+                palauteVirheViesti.textContent = "Palaute on liian lyhyt";
+                palaute.style.borderColor = "red";
+                palaute.style.backgroundColor = "#ffcbc9";
+                virhe = true;
+            } else {
+                palaute.style.borderColor = "";
+                palaute.style.backgroundColor = "";
+            }
+
+            if (!virhe) { // jos ei virheitä, submit
+                onnistunutViesti.textContent = "PALAUTE VASTAANOTETTU!";
+                onnistunutViesti.style.display = "block";
+                palauteLomake.reset();
+            // oikeasti tässä olisi palauteLomake.submit();, mutta sitten viesti ei ehdi näkyä
+            }
+        });}
+
+
+
+/*   mallina
+    const lisaysInput = document.querySelector("#lisays");
+    if(lisaysInput) {
+        lisaysInput.addEventListener("keydown", function(e) {
+            if(e.key === "Enter") {
+                e.preventDefault();
+                if(lisaysInput.value !== "") {
+                    lisaaListaan();
+                }
+            }
+        });
+    } */

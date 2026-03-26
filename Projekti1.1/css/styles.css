@@ -14,11 +14,10 @@ tummempi vpun #ffcbc9
 /* Taustan väri ja responsiivisuus eri näyttökooille */
 body {
     background-color: #ffe7f1;
-    background-image: url("../assets/postit.jpg"); /* Lisätty taustakuva, joka toistuu*/
     background-repeat: repeat;
     background-size: 500px;
     color: #4A4A4A;
-    justify-content:flex-start;  
+    justify-content:flex-start;
 }
 
 /* Otsikoiden / tekstin värit, varjostus, alleviivaus */
@@ -47,6 +46,11 @@ h2 {
     border-bottom: 2px solid #ffcbc9;
 }
 
+.nav-link {
+    color: #835dc0 !important;
+    font-weight: bold;
+}
+
 .nav-tabs .nav-link.active {
     background-color: #d5c4ee !important;
     border: 2px solid #ffcbc9 !important;
@@ -70,7 +74,7 @@ h2 {
     align-items: flex-start;
 }
 
-/*.container2 {
+/*.container2 {  //ylimäärinen containeri, jätän talteen
     background-color: #d5c4ee;
     border: 1px solid;
     border-color:#d3bff1;
@@ -195,6 +199,24 @@ h2 {
     margin: 10px;
 }
 
+#ullatusNappi {
+    color:#292727;
+    font-weight: bold;
+    border-color: #ffa600;
+    padding: 10px 15px;
+    border-radius: 80px;
+    margin: 10px;
+}
+
+#palauteNappi {
+    color:#ffffff;
+    font-weight: bold;
+    background-color: #b990fa;
+    border-color:#8760c5;
+    padding: 10px;
+    border-radius: 80px;
+}
+
 #lista {
     color:#f86d68;
 }
@@ -234,4 +256,22 @@ th {
     width: 100%;
     margin: 0 auto;
     justify-content:flex-start; 
+}
+
+#sapoVirheViesti #palauteVirheViesti {
+    color: darkred;
+    font-weight: bold;
+}
+
+#onnistunutViesti {
+    display: none; /* alkuun piilossa */
+    color: #f86d68;
+    font-weight: bold;
+    font-size: xx-large;
+    background-color: #ffcbc9;
+    text-align: center;
+    margin: 20px;
+    border-style: double;
+    border-color: #f8c668;
+    border-radius: 60px;
 }
