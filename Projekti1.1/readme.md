@@ -118,7 +118,7 @@ Käytin ChatGPT:tä debuggauksessa, esim. bongatakseni kirjoitusvirheet,
 jotka rikkoivat koodin toimintaa sekä Local Storagen toimintaan saattamisessa.  
 Kommenteissa on mainittu muutamat muut kohdat, joissa chatGPT on auttanut löytämään oikean kohdan tai neuvonut, kuinka, esim. Bootstrapin muotoilu ohitetaan.  
 
-Hyödynsin myös vinkkejä ja keskusteluja sivustoilta:  
+Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:  
 [GitHub Docs](https://docs.github.com/en)  
 [Bootstrap](https://getbootstrap.com/)  
 [Stack Overflow questions](https://stackoverflow.com/questions)  
@@ -127,4 +127,4 @@ Hyödynsin myös vinkkejä ja keskusteluja sivustoilta:
 
 
 ## Lisenssi
-MIT-lisenssi @ [Taru Laine](https://github.com/tLineaaa)
+[MIT-lisenssi]() @ [Taru Laine](https://github.com/tLineaaa)
