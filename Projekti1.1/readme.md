@@ -127,4 +127,4 @@ Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:
 
 
 ## Lisenssi
-[MIT-lisenssi]() @ [Taru Laine](https://github.com/tLineaaa)
+[MIT-lisenssi](../LICENSE) @ [Taru Laine](https://github.com/tLineaaa)
