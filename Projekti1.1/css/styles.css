@@ -82,18 +82,16 @@ h4 {
     align-items: flex-start;
 }
 
-/*.container2 {  //ylimäärinen containeri, jätän talteen
-    background-color: #d5c4ee;
-    border: 1px solid;
-    border-color:#d3bff1;
-    border-width: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
-    gap: 10px;
+.container2 {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}*/
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1 1 33%;
+    min-width: 250px;
+    max-width: 33%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
 
 /* Eri osoiden värien ja reunojen muotoilua (lomakkeen, nappien, tekstiosioiden)  */
 #mainTehtava {
@@ -138,18 +136,7 @@ h4 {
     outline: none;
 }
 
-.lista-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex: 1 1 33%;
-    min-width: 250px;
-    max-width: 33%;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-}
-
-.lista-wrapper table {
+.container2 table {
     width: 100%;
     min-height: 150px;
     border-collapse: collapse;
@@ -286,11 +273,6 @@ th {
     width: 100%;
     margin: 0 auto;
     justify-content:flex-start; 
-}
-
-#sapoVirheViesti #palauteVirheViesti {
-    color: darkred;
-    font-weight: bold;
 }
 
 #onnistunutViesti {

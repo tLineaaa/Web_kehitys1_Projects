@@ -20,15 +20,15 @@ function tallennaKaikkiListat(listat) {
     localStorage.setItem("kaikkiListat", JSON.stringify(listat));
 }
 
-// --- Päivittää localStorageen kaikki wrapperit ---
+// --- Päivittää localStorageen kaikki container2it ---
 function paivitaTallennus() {
-    const wrapperit = document.querySelectorAll(".lista-wrapper");
+    const container2it = document.querySelectorAll(".container2");
     const tallennettavat = [];
 
-    wrapperit.forEach(wrapper => {
-        const otsikko = wrapper.querySelector("th").textContent;
+    container2it.forEach(container2 => {
+        const otsikko = container2.querySelector("th").textContent;
         const tehtavat = [];
-        wrapper.querySelectorAll("tbody tr").forEach(rivi => {
+        container2.querySelectorAll("tbody tr").forEach(rivi => {
             const tehtavaTeksti = rivi.cells[1].textContent;
             const merkattu = rivi.cells[0].querySelector("input").checked;
             tehtavat.push({tehtava: tehtavaTeksti, tehty: merkattu});
@@ -83,19 +83,19 @@ function luoLista() {
         poistaTehtNappi.style.backgroundColor="#f86d68";
     });
 
-    // Luo wrapper-divi taulukolle + poista-napille
-    let listaWrapper = document.createElement("div");
-    listaWrapper.className = "lista-wrapper";
-    listaWrapper.style.display = "flex";
-    listaWrapper.style.flexDirection = "column"; // table päälle, nappi alle
-    listaWrapper.style.alignItems = "stretch";    // keskitetään nappi ja table
+    // Luo container2-divi taulukolle + poista-napille
+    let container2 = document.createElement("div");
+    container2.className = "container2";
+    container2.style.display = "flex";
+    container2.style.flexDirection = "column"; // table päälle, nappi alle
+    container2.style.alignItems = "stretch";    // keskitetään nappi ja table
 
-    // Lisää lista ja poista-nappi wrapperiin
-    listaWrapper.appendChild(uusiLista);
-    listaWrapper.appendChild(poistaTehtNappi);
+    // Lisää lista ja poista-nappi container2iin
+    container2.appendChild(uusiLista);
+    container2.appendChild(poistaTehtNappi);
 
-    // Lisää wrapper listojenPaikkaan
-    listojenPaikka.appendChild(listaWrapper);
+    // Lisää container2 listojenPaikkaan
+    listojenPaikka.appendChild(container2);
 
     // Lisätään kuuntelija tarkistamaan checkboxin muutosta
     uusiLista.addEventListener("change", function(merkattu) {
@@ -232,7 +232,7 @@ if (resetNappi) {
     
     resetNappi.addEventListener("click", function() {
         palautaListaan();
-    })
+    });
 });
 }
 
@@ -266,12 +266,13 @@ window.onload = function() {
     }
 
     kaikkiListat.forEach(lista => {
-        const kaikkiTehty = lista.tehtavat.length > 0 && lista.tehtavat.every(t => t.tehty);
-        
-        // Määritellään, näytetäänkö lista html-sivun perusteella
-        const bodyId = document.body.id;
-        if (bodyId === "index" && kaikkiTehty) return;       // index.html > keskeneräiset tehtävät
-        if (bodyId === "removed" && !kaikkiTehty) return;    // removed.html > kokonaan hoidetut tehtävät
+        let kaikkiTehty = true; //let constin sijaan, jotta voi muuttaa
+
+        for (let i = 0; i < lista.tehtavat.length; i++) {
+            if (!lista.tehtavat[i].tehty) {
+                kaikkiTehty = false;
+                }
+            }
 
         // Luodaan lista-elementti, kuten funktiossa luoLista()
         let uusiLista = document.createElement("table");
@@ -334,12 +335,23 @@ window.onload = function() {
 
         uusiLista.appendChild(tehtavienPaikka);
 
-        // Lisätään kans mukaan wrapper + poista-nappi kuuntelijoineen
-        let listaWrapper = document.createElement("div");
-        listaWrapper.className = "lista-wrapper";
-        listaWrapper.style.display = "flex";
-        listaWrapper.style.flexDirection = "column";
-        listaWrapper.style.alignItems = "center";
+        // Lisätään kans mukaan container2 + poista-nappi kuuntelijoineen
+        let container2 = document.createElement("div");
+        container2.className = "container2";
+        container2.style.display = "flex";
+        container2.style.flexDirection = "column";
+        container2.style.alignItems = "center";
+
+        // Määritellään, näytetäänkö lista html-sivun perusteella
+        const bodyId = document.body.id;
+        if (bodyId === "index" && kaikkiTehty) { // jos ollaan index.html -sivulla ja kaikki on tehty
+            container2.style.display = "none"; // jemmaa tehdyt näkyvistä
+        }
+
+        if (bodyId === "removed" && !kaikkiTehty) { // jos removed.html, näytetään vain kokonaan hoidetut tehtävät
+            container2.style.display = "none";
+        }
+
 
         let poistaTehtNappi = document.createElement("button");
         poistaTehtNappi.id = "poistaTehtNappi";
@@ -347,7 +359,7 @@ window.onload = function() {
 
         poistaTehtNappi.addEventListener("click", function() {
             if(confirm("Oletko varma, että haluat poistaa listan?")) {
-                listaWrapper.remove();
+                container2.remove();
                 paivitaTallennus();
             }
         });
@@ -359,10 +371,10 @@ window.onload = function() {
             poistaTehtNappi.style.backgroundColor="#f86d68";
         });
 
-        listaWrapper.appendChild(uusiLista);
-        listaWrapper.appendChild(poistaTehtNappi);
+        container2.appendChild(uusiLista);
+        container2.appendChild(poistaTehtNappi);
 
-        document.querySelector(".listanPaikka").appendChild(listaWrapper);
+        document.querySelector(".listanPaikka").appendChild(container2);
     });}
 
 // Tarkistetaan syötteet
@@ -389,6 +401,8 @@ let onnistunutViesti = document.querySelector("#onnistunutViesti");
                 sapoVirheViesti.textContent = "Syötä sähköposti oikeassa muodossa";
                 sahkoposti.style.borderColor = "red"; // muuta sapon syötekentän reunat ja kenttä punaiseksi
                 sahkoposti.style.backgroundColor = "#ffcbc9";
+                sapoVirheViesti.style.color = "darkred";
+                sapoVirheViesti.style.fontWeight = "bold";
                 virhe = true;
             } else { // palautetaan värit oletukseen
                 sahkoposti.style.borderColor = "";
@@ -399,6 +413,8 @@ let onnistunutViesti = document.querySelector("#onnistunutViesti");
                 palauteVirheViesti.textContent = "Palaute on liian lyhyt";
                 palaute.style.borderColor = "red";
                 palaute.style.backgroundColor = "#ffcbc9";
+                palauteVirheViesti.style.color = "darkred";
+                palauteVirheViesti.style.fontWeight = "bold";
                 virhe = true;
             } else {
                 palaute.style.borderColor = "";
@@ -412,18 +428,3 @@ let onnistunutViesti = document.querySelector("#onnistunutViesti");
             // oikeasti tässä olisi palauteLomake.submit();, mutta sitten viesti ei ehdi näkyä
             }
         });}
-
-
-
-/*   mallina
-    const lisaysInput = document.querySelector("#lisays");
-    if(lisaysInput) {
-        lisaysInput.addEventListener("keydown", function(e) {
-            if(e.key === "Enter") {
-                e.preventDefault();
-                if(lisaysInput.value !== "") {
-                    lisaaListaan();
-                }
-            }
-        });
-    } */
