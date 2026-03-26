@@ -1,19 +1,13 @@
 // Javascript jutut
-// tulee käytettyä // ja /* */, kun on tehnyt myös CSS:ää - onko merkitystä?
+// tulee käytettyä // ja /* */, kun on tehnyt myös CSS:ää samalla
 
-// Lisää:
-// (muokkausmahis, siirtomahis?)
-// - virheilmoitus virheellisestä syötteestä ja ko. tekstikentän korostus
-// - enterillä syötteen vastaanotto?
-
-// entä jos kaikki tehtävät listalta on tehty, mitä listalle tapahtuu?
-
-// Extraa:
-// - alasvetovalikko kaikista listoista otsikoineen?
-// - laskuri auki olevista tehtävistä tai listoista?
+// Extraextralisättävää:
+// - muokkaus- ja siirtomahis (muokkaa tehtäväosiota tai poista yksi osio, siirrä lista valmiista takaisin aktiivisiin)
+// - kaikkien valmiiden listojen samanaikainen poisto
+// - alasvetovalikko kaikista listoista otsikoineen (click avaa tietyn listan?)
+// - vielä tarkemmat tarkastukset palautelomakkeeseen ja sen sähköpostiosioon
+// - laskuri auki olevista tehtävistä tai listoista
 // - HTML5 drag&drop
-// - napit joka näyttää, esim. vain tehdyt, vain tekemättömät ja kaikki
-
 
 // --- Hakee localStoragesta tallennetut listat ---
 function haeTallennetut() {
@@ -170,14 +164,10 @@ function lisaaListaan() {
     lisaSolu2.textContent = lisays;
     
  
-    document.querySelector("#lisays").value = "";
+    document.querySelector("#lisays").value = ""; // tyhjennetään kenttä
     paivitaTallennus();
-}  // tyhjennetään kenttä
+}
 
-
-//function poistaListalta() {
-//    let poisto = ;
-//}
 
 // Muokataan painikkeille kuuntelijat, jotka reagoivat, kun hiiri menee napin päälle/poistuu päältä ja kun niitä klikataan
 let uusiNappi = document.querySelector("#uusiNappi");
