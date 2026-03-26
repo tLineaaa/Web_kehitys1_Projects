@@ -32,6 +32,7 @@ h1 {
 h2 {
     color: #9466df;
     text-shadow: 1px 1px 50px rgba(0,0,0,0.5);
+    margin: 20px;
 }
 
 .card.text-center {
@@ -216,6 +217,28 @@ h2 {
     padding: 10px;
     border-radius: 80px;
 }
+
+#resetNappi {
+    color:#000000;
+    font-weight: bold;
+    background-color: #afe962;
+    border-color:#acf34e;
+    padding: 10px 15px;
+    border-radius: 80px;
+    margin: 15px;
+}
+
+
+#pysyPoissaNappi {
+    color:#292727;
+    font-weight: bold;
+    background-color: #f86d68;
+    border-color: #eb4842;
+    padding: 10px 15px;
+    border-radius: 80px;
+    margin: 10px;
+}
+
 
 #lista {
     color:#f86d68;
