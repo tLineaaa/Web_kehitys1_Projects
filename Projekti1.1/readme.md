@@ -70,12 +70,11 @@ sillä "lisää"-painike ei tunnu aina toimivan.
 
 ## Kuvakaappaukset
 
-
-![Etusivun malli, listojen lisäys ja poisto, checkboxit](image.png)
 Etusivun malli, listojen lisäys ja poisto, checkboxit  
+![Etusivun malli, listojen lisäys ja poisto, checkboxit](/assets/image.png)  
 
-![Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa](image-1.png)
 Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa  
+![Palautelomake tarkistaa lähettäessä ja herjaa tarvittaessa](/assets/image-1.png)  
 
 Kuvat: Taru Laine  
 
