@@ -55,6 +55,9 @@ valinta.addEventListener('change', function() { // kuuntelija, joka reagoi siihe
     }
 });
 
+
+// Pitäiskö olla tyhjennys? Vai sama, jos vaan on oikea artisti näkyvillä omien albumiensa yhteydessä
+
 etsi.addEventListener('input', function() { // kuuntelija, joka reagoi hakukentän syötteeseen
     if (etsi.value !== "") { // kunhan ei ole tyhjä kentä,
         haeAlbumit(etsi.value); // aja funktio haeAlbumi() etsi-arvon mukaan
