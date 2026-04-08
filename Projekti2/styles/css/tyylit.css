@@ -1,0 +1,132 @@
+/* Omat css:t tänne
+
+Laitettu !important, jotta omat muotoilut menee Bootstrapin muotoilun yli*/
+
+/*#navDiv {
+    display: flex;
+}*/
+
+
+.ekaDiv {
+    display: flex !important;
+    justify-content: center !important;
+    width: 300px !important;
+    font-size: 1.25rem !important;
+    padding: 10px !important;
+    padding-top: 50px !important;
+    margin: 50px auto 0 !important;
+}
+
+body {
+    background-color: #ffe7f1 !important;
+    background-image: url("../../images/colour-sound-wave-e1452611417196.jpg") !important;
+    color: #4A4A4A !important;
+    background-size: 100% 150%;
+}
+
+.navbar {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.85) !important; /* semi-transparent black */
+    color: #ffffff !important;
+    font-size: larger;
+}
+
+.navbar .navbar-brand {
+    color: #ff4081 !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081;
+    font-size: xx-large;
+}
+
+.navbar .navbar-brand:hover {  /*hiiri päällä*/
+    color: #ffffff !important;
+    text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081;
+}
+
+.navbar .nav-link {
+    color: #0dcaf0 !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px #0dcaf0, 0 0 10px #0dcaf0;
+}
+
+.navbar .nav-link:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px #0dcaf0, 0 0 20px #0dcaf0;
+}
+
+
+.navbar-toggler {
+    background-color: #0dcaf0 !important;
+    border-color: #0dcaf0 !important;
+}
+
+
+.ekaDiv .form-select { /*valikkomenun värit*/
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    color: #0dcaf0 !important;
+    border: 1px solid #0dcaf0 !important;
+    font-size: 1.25rem !important;
+    transition: background-color 0.3s ease !important, color 0.3s ease !important, box-shadow 0.3s ease !important;
+}
+
+.ekaDiv .form-select option { /* vaihtoehdot pinkillä */
+    background-color: #000000 !important;
+    color: #ff4081 !important;
+}
+
+.ekaDiv .form-select option:checked {
+    background-color: #0dcaf0 !important;
+    color: #000000 !important;
+}
+
+.ekaDiv .form-select:hover {
+    background-color: rgba(13, 202, 240, 0.8) !important; /* cyan highlight */
+    color: #000000 !important;
+    border-color: #0dcaf0 !important;
+    box-shadow: 0 0 10px #0dcaf0 !important;
+}
+
+.ekaDiv .form-select:focus {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    color: #0dcaf0 !important;
+    border-color: #0dcaf0 !important;
+    box-shadow: 0 0 10px #0dcaf0 !important;
+    outline: none !important;
+    font-size: 1.25rem !important;
+}
+
+h3 {
+    padding-top: 2%;
+    color: #ff4081;
+    text-shadow: 1px 1px 25px #ff4081;
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0;
+}
+
+#etsimisPaikka {
+    margin-left: auto;
+    display:flex;
+    align-items: center;
+}
+
+.form-label {
+    color: #0dcaf0 !important;
+    text-shadow: 0 0 10px #0dcaf0 !important;
+}
+
+#exampleDataList {
+    background-color: rgb(255, 209, 240);
+    border-color: #ff4081;
+}
+
+.albumDiv {
+    display: flex;
+    padding: 1%;
+    background-image: url(../../images/colour-sound-wave-e1452611417196.jpg);
+}
+
+
+/*värejä talteen
+lila = #c340ff 
+vpun = rgb(255, 202, 239)*/
