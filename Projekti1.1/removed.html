@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO Valmiit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="removed">
+    <div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="true" href="index.html">Aktiiviset</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="done.html">Kaikki</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="removed.html">Valmiit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="feedback.html">Anna palautetta</a>
+      </li>
+    </ul>
+  </div>
+  <h2 class="card-title">Valmiit</h2>
+  <p class="card-text">Mahtavaa! Nämä olet jo hoitanut kokonaan</p>
+  <div class="card-body">
+    <div class="listanPaikka"></div>
+    <a href="#" id="resetNappi" class="btn btn-info">Palauta aktiivisiin</a> <!-- painikkeet tulisi lisätä per tehtävä, kesken -->
+    <a href="#" id="pysyPoissaNappi" class="btn btn-danger">Poista kaikki tehdyt listat pysyvästi</a>
+  </div>
+</div>
+<script src="js/kuuntelijat.js"></script>
+</body>
+</html>
