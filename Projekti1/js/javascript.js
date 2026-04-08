@@ -2,20 +2,21 @@
 // tulee käytettyä // ja /* */, kun on tehnyt myös CSS:ää - onko merkitystä?
 
 // Lisää:
-// - poistomahis (muokkausmahis, siirtomahis?)
 // - virheilmoitus virheellisestä syötteestä ja ko. tekstikentän korostus
 // - enterillä syötteen vastaanotto?
+// localStorage.setItem(), localStorage.getItem()
 
 // entä jos kaikki tehtävät listalta on tehty, mitä listalle tapahtuu?
 
 // Extraa:
 // - alasvetovalikko kaikista listoista otsikoineen?
-// - piilottaa / näyttää elementtejä (esim. tehtävienlisäys vasta otsikon jälkeen?)
 // - laskuri auki olevista tehtävistä tai listoista?
 // - HTML5 drag&drop
 // - napit joka näyttää, esim. vain tehdyt, vain tekemättömät ja kaikki
 
-// BOOTSTRAPia saa käyttää!
+// SuperExtraa:
+// - muotoilua, esim. card-muotoon (koska tehdään tässä tapauksessa vasta jälkikäteen)
+// BOOTSTRAPia saa käyttää
 
 
 // muista tämä: e.preventDefault(); // Estetään lomakkeen oletustapahtuma (sivun lataus)
@@ -39,10 +40,18 @@ function luoLista() {
     let tehtavienPaikka = document.createElement("tbody");
     uusiLista.appendChild(tehtavienPaikka);
 
-    let listojenPaikka = document.querySelector(".container2"); /*osoitetaan listojen paikka (missä tulee näkymään)*/
+    let listojenPaikka = document.querySelector(".listanpaikka"); /*osoitetaan listojen paikka (missä tulee näkymään)*/
     listojenPaikka.appendChild(uusiLista);
 
     document.querySelector("#mainTehtava").value = ""; /* tyhjennetään kenttä */
+
+    // Määritellään poista-nappi poistamaan koko listan
+    let poistaLista = document.querySelector("#poistaNappi")
+    poistaLista.addEventListener("click", function() {
+        let poisto = confirm("Oletko varma, että haluat poistaa listan?");
+            if (poisto === true) {
+                uusiLista.remove();}
+            else return;})
 
     // Lisätään kuuntelija tarkistamaan checkboxin muutosta
     uusiLista.addEventListener("change", function(merkattu) {
@@ -63,13 +72,40 @@ function luoLista() {
                 rivi.style.backgroundColor = "#EAF6FF"; // sama kuin yllä
             }
         }
-    });
+})
 }
+
+// Lisätään kuuntelija, ettei lähetetä tyhjää "päätehtävää"
+let paaHomma = document.querySelector("#listaan");
+paaHomma.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let syote = document.querySelector("#mainTehtava").value;
+
+    if (syote === "") { // jos syöte on tyhjä, hälytä ja palaa
+        alert("Kirjoita tehtävä");
+        return;
+    }
+    
+    luoLista(); // jos ok, ajetaan funktio luoLista
+    
+})
+
+
+// Kuuntelija uusiNappi-kohtaan ("Luo uusi lista"), jotta otetaan piilosta lisaysListaan formi
+let lisaysPiiloon = document.querySelector(".container2");
+lisaysPiiloon.style.display="none";
+
+let lisaysEsiin = document.querySelector("#uusiNappi");
+lisaysEsiin.addEventListener("click", function() {
+    lisaysPiiloon.style.display="";
+})
+
 
 // Luodaan tehtäviä listaan
 function lisaaListaan() {
     let lisays = document.querySelector("#lisays").value // valitaan kenttään syötetty sisältö
-    if(lisays === "") return; // jos kenttä tyhjä, ei tehdä mitään
+    if(lisays === "") return; // jos kenttä tyhjä, ei tehdä mitään (ei lisätä rivejä yms.)
 
     let listat = document.querySelectorAll(".container2 table") // valitaan kaikki listat
     let viimeisinLista = listat[listat.length -1]; // valitaan viimeisin luotu lista
@@ -113,6 +149,17 @@ poistaNappi.addEventListener("mouseenter", function() {
     poistaNappi.addEventListener("mouseleave", function() {
     poistaNappi.style.backgroundColor="#f86d68";
 })
+
+let tallennaNappi = document.querySelector("#tallennaLista")
+tallennaNappi.addEventListener("mouseenter", function() {
+    tallennaNappi.style.backgroundColor="#b990fa";})
+
+    tallennaNappi.addEventListener("mouseleave", function() {
+    tallennaNappi.style.backgroundColor="#c0b1da";
+})
+
+//localStorage.setItem("")
+
 
 
 

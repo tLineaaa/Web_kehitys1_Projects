@@ -1,5 +1,7 @@
 /*CSS jutut*/
 
+/* hyvä väri talteen: vaalean lila #d5c4ee */
+
 /* Taustan väri ja responsiivisuus eri näyttökooille */
 body {
     background-color: #ffe7f1;
@@ -14,6 +16,12 @@ body {
 /* Otsikoiden / tekstin värit, varjostus, alleviivaus */
 h1 {
     color: #835dc0;
+    text-shadow: 1px 1px 25px rgba(0,0,0,0.5);
+    text-decoration: underline;
+}
+
+h4 {
+    color: #9466df;
     text-shadow: 1px 1px 25px rgba(0,0,0,0.5);
     text-decoration: underline;
 }
@@ -34,6 +42,21 @@ h5 {
 }
 
 .container2 {
+    background-color: #feffd0;
+    border: 1px solid;
+    border-color:#ff9a96;
+    border-width: 2px;
+    padding-left: 20px;
+    padding-right: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+    border-width: 2px;
+    padding:20px;
+}
+
+.container3 {
     background-color: #ffcbc9;
     border: 1px solid;
     border-color:#d3bff1;
@@ -108,6 +131,14 @@ h5 {
     border-radius: 80px;
 }
 
+#tallennaLista {
+    color:#251e1e;
+    background-color: #c0b1da;
+    border-color: #8760c5;
+    padding: 10px 15px;
+    border-radius: 80px;
+}
+
 #lista {
     color:#f86d68;
 }
@@ -115,6 +146,7 @@ h5 {
 .container2 table {
     border-collapse: collapse;
     background-color: #EAF6FF;
+    margin-bottom: 10px;
 }
 
 td {
