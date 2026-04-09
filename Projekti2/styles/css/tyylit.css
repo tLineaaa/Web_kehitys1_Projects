@@ -95,13 +95,23 @@ body {
     font-size: 1.25rem !important;
 }
 
+h1 {
+    color: #0dcaf0 !important;
+    text-shadow: 0 0 10px #0dcaf0;
+    display: flex !important;
+    justify-content: center !important;
+    font-size: xx-large;
+    padding: 5% 7%;
+    border: #0dcaf0;
+    border-style: ridge;
+}
+
 h3 {
-    padding-top: 2%;
+    padding-top: 2% 2%;
     color: #ff4081;
     text-shadow: 1px 1px 25px #ff4081;
     display: flex !important;
     justify-content: center !important;
-    margin: 0;
 }
 
 #etsimisPaikka {
