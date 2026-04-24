@@ -17,6 +17,21 @@ Laitettu !important, jotta omat muotoilut menee Bootstrapin muotoilun yli*/
     margin: 50px auto 0 !important;
 }
 
+#kissaNapinPaikka {
+    display: flex !important;
+    justify-content: center !important;
+    width: 300px !important;
+    padding: 10px !important;
+    padding-top: 50px !important;
+    margin: 50px auto  !important;
+}
+
+/* muokkaa vielä napin paikka keskelle ruutua ja/tai isommaksi*/
+#kissaNappi {
+    padding: 4;
+    font-size: x-large;
+}
+
 body {
     background-color: #ffe7f1 !important;
     background-image: url("../../images/colour-sound-wave-e1452611417196.jpg") !important;
@@ -119,6 +134,7 @@ h3 {
     display:flex;
     align-items: center;
 }
+
 
 .form-label {
     color: #0dcaf0 !important;
