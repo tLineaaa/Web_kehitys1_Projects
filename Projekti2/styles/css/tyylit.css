@@ -81,7 +81,9 @@ body {
     color: #0dcaf0 !important;
     border: 1px solid #0dcaf0 !important;
     font-size: 1.25rem !important;
-    transition: background-color 0.3s ease !important, color 0.3s ease !important, box-shadow 0.3s ease !important;
+    transition: background-color 0.3s ease !important;
+    color: 0.3s ease !important;
+    box-shadow: 0.3s ease !important;
 }
 
 .ekaDiv .form-select option { /* vaihtoehdot pinkillä */
