@@ -88,23 +88,42 @@ if(etsi) {
 
 // ullatus.html:n työstämistä JATKA SYÖTTEEN TULOSTEEN KANSSA
 
-const catApiKey = "live_Qq9TZXOog8U05SHE7mI2ELkWvNV4zC9D2p3DJYLqdRG7VqtsNKWQbHAoW8rljGfT";
-const ullatusPaikka = document.querySelector("#ullatusPaikka");
-const kissaNappi = document.querySelector("kissaNappi")
+const catApiKey = "live_Qq9TZXOog8U05SHE7mI2ELkWvNV4zC9D2p3DJYLqdRG7VqtsNKWQbHAoW8rljGfT"; // apiKey
+const ullatusPaikka = document.querySelector("#ullatusPaikka"); // määritellään paikka yllätykselle
+const kissaNappi = document.querySelector("#kissaNappi") // valikoidaan nappi
+const musiikki = new Audio("sound/the_mountain-brazilian-phonk-505181.mp3"); // luodaan audio (haetaan kansiosta sound)
+const tanssiTyyli = ["hyppy", "hyppy2", "hyppy3"]
+let i = 0;
 
 function haeKisu() {
-    fetch = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=${catApiKey}` // hae apikeyn kanssa kuvat (määärä 10, rotu beng) - MUOKKAA?
+    fetch(`https://api.thecatapi.com/v1/images/search?limit=30&breed_ids=sava,beng,norw,mcoo,ragd&api_key=${catApiKey}`) // hae apikeyn kanssa kuvat (määrä 10, rotu beng) - MUOKKAA?
     
     .then((response) => response.json()) // palauta vastaus json muodossa
 
-    .then(data => console.log(`KisuApin tulos ${data}`)) // logitetaan konsoliin
+    .then(data => {
+        console.log("KisuApin tulos", data); // logitetaan konsoliin
+        
+        ullatusPaikka.innerHTML = ""; // tyhjä paikka
+    
+        data.forEach(kissa => { // jokaista kissaa kohti
+        const uusiKissaKuva = document.createElement("img"); // luo kuva
+        uusiKissaKuva.src = kissa.url; // kuvan lähde on kissa.url (saatu fetchillä)
+        uusiKissaKuva.classList.add("kisu", tanssiTyyli[i % 3]); // lisätään class ja tanssityyli
+        i++;
+        ullatusPaikka.appendChild(uusiKissaKuva); // lisää kuva ullatusPaikkaan
+        });
+    })
+    .catch(error => console.error(`Virhe: ${error}`)); //näytä virhe console logissa
+}
 
-    .catch(error => console.error(`Virhe: ${error}`))
-};
-
-// PITIKÖ TEHDÄ TARKASTUS JSONIN KANSSA VAKIOTARKASTUS?
+//function tanssi() {
+// document.querySelectorAll(".kisu").forEach(uusiKissaKuva => {
+//    uusiKissaKuva.classList.add("hyppy");
+//  });
+//}
 
 if(kissaNappi) { // tarkistetaan, että kissanappi löytyy
-    kissaNappi.addEventListener('click', function() {
-    haeKisu(); 
+    kissaNappi.addEventListener('click', function() { // klikatessa sitä suorita funktio
+    musiikki.play(); //soita musiikki
+    haeKisu(); //haeKisu
 });}

@@ -154,6 +154,44 @@ h3 {
     background-image: url(../../images/colour-sound-wave-e1452611417196.jpg);
 }
 
+#ullatusPaikka {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+#ullatusPaikka img {
+   width: 100%;
+  height: auto;
+  display: block;   
+}
+
+@keyframes bounce2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes side {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.hyppy {
+  animation: bounce 0.4s infinite;
+}
+
+.hyppy2 {
+    animation: bounce2 0.7s infinite;
+}
+
+.hyppy3 {
+    animation: side 0.5s infinite;
+}
 
 /*värejä talteen
 lila = #c340ff 
