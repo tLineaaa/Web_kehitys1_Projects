@@ -28,7 +28,7 @@ ruudulle.
   
 Jatkotyöstönä lisäisin mahdollisuuden albumien nimiä klikatessa  
 saada näkyviin kyseessä olevan albumin kappaleiden nimet.  
-Harkitsisin myös albumeiden asettamista ruudukkonäkymään listamaisen tyylin sijaan, ja  muuttaisin hampurilaisvalikon ulkoasua.  
+Harkitsisin myös albumeiden asettamista ruudukkonäkymään listamaisen tyylin sijaan, ja    muuttaisin hampurilaisvalikon ulkoasua.  
 Bonusosioon voisi lisätä mahdollisuuden valita kissavieraiden määrän sekä rodun tai rodut.  
 API-avaimet siirtäisin myös piiloon.  
   
@@ -50,7 +50,7 @@ varmasti vielä jatkaa työskentelyä, jotta alkaa sujumaan sutjakkaammin.
 
 ## Sisällysluettelo:
 - [Tietoja sovelluksesta](#tietoja-sovelluksesta)
-- [Tunnetut virheet/bugit](#Tunnetut-virheet/bugit)
+- [Tunnetut virheet/bugit](#tunnetut-virheet/bugit)
 - [Kuvakaappaukset](#kuvakaappaukset)
 - [Teknologiat](#teknologiat)
 - [Asennus](#asennus)
@@ -74,13 +74,13 @@ Avaimet voi piilottaa ja sen tekisin seuraavan vastaavan projektin kohdalla.
 
 ## Kuvakaappaukset
 
-Etusivun malli: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen  
+# Etusivun malli: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen  
 ![Etusivun malli: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen ](images/index.jpg)  
 
-Valittu artisti Kiraw + albumien tiedot kuvien kanssa 
+# Valittu artisti Kiraw + albumien tiedot kuvien kanssa 
 ![Kissa API -puolen iloinen kissa ](images/albumit.jpg)  
 
-Kissa API -puolen iloinen kissa  
+# Kissa API -puolen iloinen kissa  
 ![Kissa API -puolen iloinen kissa ](images/ilokissa.jpg)  
 
 Kuvat: Taru Laine  
@@ -129,7 +129,8 @@ animaatioiden aikaansaannissa sekä kissakuvan muokkauksesa.
 
 Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:  
 [Bootstrap](https://getbootstrap.com/)  
-[GitHub Docs](https://docs.github.com/en)   
+[GitHub Docs](https://docs.github.com/en)  
+[Last.fm Music Discovery API](https://www.last.fm/api)  
 [Lazaris, L. 2023 Fetch API Tutorial for Beginners: How to Use Fetch API](https://wpshout.com/fetch-api-tutorial-for-beginners/)  
 [MDN](https://developer.mozilla.org/en-US/)  
 [Stack Overflow questions](https://stackoverflow.com/questions)  
@@ -140,7 +141,9 @@ Musiikki: [Brazilian Phonk by The_Mountain](https://pixabay.com/music/edm-brazil
 ## Lisenssi
 [MIT-lisenssi](../LICENSE) @ [Taru Laine](https://github.com/tLineaaa)  
 
-Loppukevennyksenä ChatGPTn kommentointia koodistani:
-"Selain katsoo sitä vähän kuin yrittäisit asentaa renkaat kahvikuppiin."  
-  "JavaScript on joskus kuin innokas siivooja: jos annat sille väärän huoneen avaimet, se tyhjentää koko talon."
-  "Nyt koodisi pitäisi taas herätä henkiin ilman dramatiikkaa. JavaScript rakastaa tällaisia kirjoitusvirheitä – ne ovat sen lempivälipalaa."
+Loppukevennyksenä ChatGPTn kommentointia koodistani:  
+"Selain katsoo sitä vähän kuin yrittäisit asentaa renkaat kahvikuppiin." 
+
+"JavaScript on joskus kuin innokas siivooja: jos annat sille väärän huoneen avaimet, se tyhjentää koko talon."  
+
+"Nyt koodisi pitäisi taas herätä henkiin ilman dramatiikkaa. JavaScript rakastaa tällaisia kirjoitusvirheitä – ne ovat sen lempivälipalaa."
