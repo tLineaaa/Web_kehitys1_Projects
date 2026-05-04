@@ -104,32 +104,32 @@ function haeKisu() {
     .catch(error => console.error(`Virhe: ${error}`)); //näytä virhe console logissa
 }
 
-function vaihdaIloksi() {
-    sankariKissa.src = "images/iloinenkisu.png";
+function vaihdaIloksi() { //Luodaan funktio
+    sankariKissa.src = "images/iloinenkisu.png"; // joka vaihtaa sankariKissan lähteeksi iloinenkisu.png:n
 }
 
 
-function lisaaStop() {
-    let stopPaikka = document.querySelector("#stopPainike");
-    stopPaikka.innerHTML = "";
-    let stop = document.createElement("button");
-    stop.id = "stopNappi";
-    stop.textContent = "Stop";
-    stopPaikka.appendChild(stop);
+function lisaaStop() { // Luodaan funktio
+    let stopPaikka = document.querySelector("#stopPainike"); // paikka määritelty
+    stopPaikka.innerHTML = ""; // tyhjenentty em. paikka
+    let stop = document.createElement("button"); // luodaan nappi
+    stop.id = "stopNappi"; // annetaan sille id
+    stop.textContent = "Stop"; // sen tekstisisältö on Stop
+    stopPaikka.appendChild(stop); // lisätään painike paikoilleen
 
-    if(stop) {
-        stop.addEventListener("mouseenter", function() {
-            stop.style.backgroundColor="#c50101";
+    if(stop) { // Jos stop-nappi löytyy
+        stop.addEventListener("mouseenter", function() { // kun hiiri menee sen ylle
+            stop.style.backgroundColor="#c50101"; // vaihdetaan väri tummemmaksi
         })
 
-        stop.addEventListener("mouseleave", function() {
-            stop.style.backgroundColor="#ff0000";
+        stop.addEventListener("mouseleave", function() { // kun hiiri lähtee napin yltä
+            stop.style.backgroundColor="#ff0000"; // väri vaihtuu takaisin alkuperäiseksi
         })
     }
 
-    stop.addEventListener('click', function() {
-        musiikki.pause(); 
-        ullatusPaikka.innerHTML = "";
+    stop.addEventListener('click', function() { // Lisätään kuuntelija stop-napille, klikatessa
+        musiikki.pause();  // musiikki paussille
+        ullatusPaikka.innerHTML = ""; // tyhjennä ullatusPaikka
     });
 }
 
@@ -137,6 +137,6 @@ if(kissaNappi) { // tarkistetaan, että kissanappi löytyy
     kissaNappi.addEventListener('click', function() { // klikatessa sitä suorita funktio
     musiikki.play(); //soita musiikki
     haeKisu(); //haeKisu
-    vaihdaIloksi();
-    lisaaStop();
+    vaihdaIloksi(); //vaihda kuva iloiseksi (aja tämä funktio - se tekee tämän)
+    lisaaStop(); // aja funktio lisaaStop, joka lisää Stop-napin
 });}
