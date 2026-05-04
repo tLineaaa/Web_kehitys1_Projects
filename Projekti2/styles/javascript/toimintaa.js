@@ -7,14 +7,12 @@ const valinta = document.querySelector("#valinta");
 const etsi = document.querySelector("#exampleDataList");
 const albumitPaikka = document.querySelector("#albumitPaikka");
 
-// KESKEN biisien haku - onclick jo alempana function haeBiisit(artisti, albumi),
-// samoin artistin nimi näkyviin ja puuttuva (tai risa?) kuva - kaikki aloitettu
 
 function haeAlbumit(artisti) {
     fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${encodeURIComponent(artisti)}&api_key=${apiKey}&format=json`) //encodeURIComponent hyväksyy välilyönnit ja erikoismerkit
         .then ((response) => response.json())
         .then (function(data) {
-            console.log(`Koko APIn vastaus: ${data}`);
+            console.log("Koko APIn vastaus:", data);
             albumitPaikka.innerHTML = ""; //tyhjennä aiemmat albumit näkyviltä
 
 
@@ -34,6 +32,7 @@ function haeAlbumit(artisti) {
             
             } else {
                 aKuva = "images/eisaatavilla2.jpg"; // jos kuvaa ei saatavilla, näytä tämä kuva - toimiiko? entä risan kuvan kanssa?
+                aKuva.classList.add("varakuva");
             }
 
             const kuva = document.createElement("img");
@@ -42,16 +41,15 @@ function haeAlbumit(artisti) {
 
             kuva.onerror = function() {
                 this.onerror = null;
-                this.src = "images/eisaatavilla2.jpg"
+                this.src = "images/eisaatavilla2.jpg";
+                this.classList.add("varakuva");
             };
+
 
 // "Selain katsoo sitä vähän kuin yrittäisit asentaa renkaat kahvikuppiin."
 // "JavaScript on joskus kuin innokas siivooja: jos annat sille väärän huoneen avaimet, se tyhjentää koko talon."
 // "Nyt koodisi pitäisi taas herätä henkiin ilman dramatiikkaa. JavaScript rakastaa tällaisia kirjoitusvirheitä – ne ovat sen lempivälipalaa."
 
-//            const nimiPaikka = document.querySelector("#nimiPaikka"); // Paikka artistin nimelle
-//          nimiPaikka.innerHTML = `<h1>${album.artist.name}</h1>` // Artistin nimi näkyviin kaikkien albumien ylle
-//            albumDiv.innerHTML = `<img src="${aKuva}" alt="${album.name}"><h3> ${album.name}</h3>`; // albumDiviin haettu kuva ja albumin nimi
 
             albumDiv.appendChild(kuva); // lisää kuva albumDiviin
             const albumiNimi = document.createElement("h3"); // määritellään documenttiin lisättäväksi h3
@@ -82,21 +80,17 @@ if(etsi) {
         }
 });}
 
-
-// let data = JSON.parse (xmlhttp.responseText)
-// console.log(data)
-
-// ullatus.html:n työstämistä JATKA SYÖTTEEN TULOSTEEN KANSSA
-
 const catApiKey = "live_Qq9TZXOog8U05SHE7mI2ELkWvNV4zC9D2p3DJYLqdRG7VqtsNKWQbHAoW8rljGfT"; // apiKey
 const ullatusPaikka = document.querySelector("#ullatusPaikka"); // määritellään paikka yllätykselle
 const kissaNappi = document.querySelector("#kissaNappi") // valikoidaan nappi
 const musiikki = new Audio("sound/the_mountain-brazilian-phonk-505181.mp3"); // luodaan audio (haetaan kansiosta sound)
 const tanssiTyyli = ["hyppy", "hyppy2", "hyppy3"]
 let i = 0;
+let sankariKissa = document.querySelector("#suru")
+const sankarinPaikka = document.querySelector("#juhlaKissa")
 
 function haeKisu() {
-    fetch(`https://api.thecatapi.com/v1/images/search?limit=30&breed_ids=sava,beng,norw,mcoo,ragd&api_key=${catApiKey}`) // hae apikeyn kanssa kuvat (määrä 10, rotu beng) - MUOKKAA?
+    fetch(`https://api.thecatapi.com/v1/images/search?limit=50&breed_ids=sava,beng,norw,mcoo,ragd&api_key=${catApiKey}`) // hae apikeyn kanssa kuvat (määrä 10, rotu beng) - MUOKKAA?
     
     .then((response) => response.json()) // palauta vastaus json muodossa
 
@@ -116,14 +110,39 @@ function haeKisu() {
     .catch(error => console.error(`Virhe: ${error}`)); //näytä virhe console logissa
 }
 
-//function tanssi() {
-// document.querySelectorAll(".kisu").forEach(uusiKissaKuva => {
-//    uusiKissaKuva.classList.add("hyppy");
-//  });
-//}
+function vaihdaIloksi() {
+    sankariKissa.src = "images/iloinenkisu.png";
+}
+
+
+function lisaaStop() {
+    let stopPaikka = document.querySelector("#stopPainike");
+    stopPaikka.innerHTML = "";
+    let stop = document.createElement("button");
+    stop.id = "stopNappi";
+    stop.textContent = "Stop";
+    stopPaikka.appendChild(stop);
+
+    if(stop) {
+        stop.addEventListener("mouseenter", function() {
+            stop.style.backgroundColor="#c50101";
+        })
+
+        stop.addEventListener("mouseleave", function() {
+            stop.style.backgroundColor="#ff0000";
+        })
+    }
+
+    stop.addEventListener('click', function() {
+        musiikki.pause(); 
+        ullatusPaikka.innerHTML = "";
+    });
+}
 
 if(kissaNappi) { // tarkistetaan, että kissanappi löytyy
     kissaNappi.addEventListener('click', function() { // klikatessa sitä suorita funktio
     musiikki.play(); //soita musiikki
     haeKisu(); //haeKisu
+    vaihdaIloksi();
+    lisaaStop();
 });}

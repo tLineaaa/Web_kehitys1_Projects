@@ -15,21 +15,38 @@ Pääset julkaistuun sovellukseen käsiksi osoitteessa: LINK
 Projektin videoesittelyn url toimitettu palautuksen kommenttikentässä.
 
 ## Oma arvio työstä ja oman osaamisen kehittymisestä
-Onnistuminen
-Vaatimusten täyhttö
-Ekstra?
-Parannettavaa/kehitettävää/lisättävää
-Jatkotyöstö?
 
-Mitä opit
-Jäikö jotain epäselväksi?
+Projektini täyttää tehtävänannon vaatimukset:
+Suoritan datakutsun valitusta APIsta, itseasiassa kahdesta eri.
+Hyödynsin fetchiä ja tulostin haetun tiedon perusteella
+osiossa 1 artistin albumien nimet ja albumien kuvat näkymään siististi jokainen omana osionaan, ja osiossa 2 napin painalluksella kissakuvia joraamaan.
 
-Antaisin itselleni pisteitä x/y p.
+Index.html:n UI sisältää sekä alasvetovalikon että hakukentän, joilla etsiä
+artisteja. Kun tehdään uusi haku, edelliset tiedot poistuvat näytöltä.
+
+Bonuksena tein "Ylläri"-sivun, jossa nappia klikkaamalla
+haetaan AJAX-kutsulla kissojen kuvia ja tuodaan ne näkyviin
+ruudulle.
+
+Jatkotyöstönä lisäisin mahdollisuuden albumien nimiä klikatessa
+saada näkyviin kyseessä olevan albumin kappaleiden nimet.
+Harkitsisin myös albumeiden asettamista ruudukkonäkymään listamaisen näkymän sijaan, ja muuttaisin hampurilaisvalikon tyyliä.
+Bonusosioon voisi lisätä mahdollisuuden valita kissavieraiden rodun tai rodut.
+
+Opin erityisesti API:n hyödyntämisestä; miten fetch kutsu tehdään, kuinka
+vastausta käsitellään ja kuinka hyödyntää haettua dataa. Lisäksi opin
+hakupalkin luonnista / toiminnasta (myös tässä hyödyntäen APIa).
+Funktioiden luonti alkoi jo käydä luontevammaksi tämän projektin myötä.
+
+Bonuksensa opin CSS:n hyödyntämisestä "animaatioiden" luonnissa sekä äänitiedoston käytöstä.
+
+Antaisin itselleni pisteitä 10/10 p.
 
 
 ## Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka
-Kurssi on ollut mielenkiintoinen ja tämä projekti oli mielestäni sopiva osaamistasoon nähden.  
-Oppimistani tukisi parityöskentely, johon meille on annettukin mahdollisuus.
+Kiitos, että annat aina tilaa kysymyksille ja keskustelulle.
+Tämä projekti tuntui alkuun haastavalta ja aiheen parissa voisin
+varmasti vielä jatkaa työskentelyä, jotta alkaa sujumaan sutjakkaammin.
 
 ## Sisällysluettelo:
 - [Tietoja sovelluksesta](#tietoja-sovelluksesta)
@@ -42,7 +59,12 @@ Oppimistani tukisi parityöskentely, johon meille on annettukin mahdollisuus.
 - [Lisenssi](#lisenssi)
 
 ## Tietoja sovelluksesta
-Mikä sovellus kyseessä, kuinka toimii
+Sovellus on Musiikki API, jossa voit etsiä joko alasvetovalikosta
+tai hakukentään kirjoittaen haluamaasi artistia. Sivulle tulostuu
+näkymä haetun artistin albumeista kuvan ja tekstin kera.
+
+Ylläri-osiossa voit klikata nappia ja aloittaa juhlat.
+Myös tässä on hyödynnetty APIa, joskin kissa-apia.
 
 
 ## Tunnetut virheet/bugit
@@ -60,25 +82,46 @@ Kuvat: Taru Laine
 
 
 ## Teknologiat
-Pohjan luonnissa käytin html:ää ja hyödynsin sen yhteydessä Bootstrapiä.  
-Muotoiluun käytin pääasiassa css:ää. Osa muotoilusta on JavaScriptin puolella (e.style.background tms.).  
-Pääpaino on kuitenkin JavaScriptissä, joka hoitaa painikkeiden ja kenttien tarkistusta sekä kuuntelua.  
+Projektissa on hyödynnetty niin HTMLää, CSSää kuin JavaScriptiä.
+Html:n navikointi- ja hakupalkin muotoilussa on hyödynnetty Bootstrapia.
+Muutoin muotoilu on luotu tyylit.css -tiedostoon.
+Tapahtumat on luotu DOM-skriptauksella toimintaa.js -tiedostoon.
+
+Pääpaino on JavaScriptin puolella, jossa suoritetaan AJAX-kutsu kahteen
+eri API-osoitteeseen. Tämän jälkeen luodaan halutuille tiedoille paikat ja
+näytetään tuodut tiedot.
 
 
 ## Asennus
 Sovellus toimii suoraan Netlifyssä: LINK
 
-Kuinka käyttää sovellusta, kuinka toimii? Asennus tms?
+Linkin avattua etusivulla on alasvetovalikko, jossa lukee "Avaa valikko".
+Sitä klikkaamalla voi listalta valikoida artistin, jonka jälkeen valitun artistin
+albumit tulevat näkyviin nimien sekä albumikuvien kera.
+
+Oikeassa yläkulmassa on hakukenttä, jonka vieresssä lukee "Etsi artistin mukaan".
+Kun kohtaan "Kirjoita tähän..." alkaa kirjoittamaan haluamansa artistin tai bändin nimeä,
+näkyy hakukentän alapuolella ehdotustulos ja ruudulla alkaa näkyä kirjoitetun artistin albumit.
+
+Bonuksensa voit klikata vasemman ylävalikon "Ylläri"-painiketta.
+Nyt ruudulla näkyy "Ei saatavilla"-kuvasta tuttu surullinen kissa,
+jonka alapuolella on "Party button". Jos klikkaat painiketta,
+alkaa musiikki soida, surullinen kissa muuttuu iloiseksi ja
+sen kaverit ilmestyvät tanssimaan.
+Kun on aika lopettaa bileet, klikkaa "Stop"-painiketta
+
 
 
 ## Kiitokset
 
 Hyödynsin projektin teossa Laurean Web-kehitys 1 (front end)-kurssin kurssimateriaalia  
-sekä omaa aiempaa [websivusto-projektiani](https://github.com/tLineaaa/Websovellukset/tree/main/WS07_oma_sivu)  
+sekä omaa aiempaa [websivusto-projektiani](https://github.com/tLineaaa/Websovellukset/tree/main/WS07_oma_sivu)
 
-Käytin ChatGPT:tä debuggauksessa, esim. bongatakseni kirjoitusvirheet,  
-jotka rikkoivat koodin toimintaa sekä Local Storagen toimintaan saattamisessa.  
-Kommenteissa on mainittu muutamat muut kohdat, joissa chatGPT on auttanut löytämään oikean kohdan tai neuvonut, kuinka, esim. Bootstrapin muotoilu ohitetaan.  
+Kiitos kurssitoveri Iinalle, jonka kanssa pohdittiin API:n toimintaa.
+
+Käytin ChatGPT:tä debuggauksessa, ideoiden toiminnan varmistamisessa,
+animaatioiden aikaansaannissa sekä kissakuvan muokkauksesa. 
+ 
 
 Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:  
 [GitHub Docs](https://docs.github.com/en)  
@@ -86,6 +129,8 @@ Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:
 [Stack Overflow questions](https://stackoverflow.com/questions)  
 [W3schools](https://www.w3schools.com/)  
 [MDN](https://developer.mozilla.org/en-US/)  
+
+Musiikki: [Brazilian Phonk by The_Mountain](https://pixabay.com/music/edm-brazilian-phonk-505181/)
 
 
 ## Lisenssi

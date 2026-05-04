@@ -2,11 +2,6 @@
 
 Laitettu !important, jotta omat muotoilut menee Bootstrapin muotoilun yli*/
 
-/*#navDiv {
-    display: flex;
-}*/
-
-
 .ekaDiv {
     display: flex !important;
     justify-content: center !important;
@@ -26,7 +21,6 @@ Laitettu !important, jotta omat muotoilut menee Bootstrapin muotoilun yli*/
     margin: 50px auto  !important;
 }
 
-/* muokkaa vielä napin paikka keskelle ruutua ja/tai isommaksi*/
 #kissaNappi {
     padding: 4;
     font-size: x-large;
@@ -69,6 +63,12 @@ body {
     text-shadow: 0 0 10px #0dcaf0, 0 0 20px #0dcaf0;
 }
 
+#exampleDataList:focus {
+    border-color: #8760c5;
+    border-width: 4px;
+    outline: none;
+    background-color: #fde6ef;
+}
 
 .navbar-toggler {
     background-color: #0dcaf0 !important;
@@ -137,7 +137,6 @@ h3 {
     align-items: center;
 }
 
-
 .form-label {
     color: #0dcaf0 !important;
     text-shadow: 0 0 10px #0dcaf0 !important;
@@ -161,28 +160,28 @@ h3 {
 }
 
 #ullatusPaikka img {
-   width: 100%;
-  height: auto;
-  display: block;   
+    width: 100%;
+    height: auto;
+    display: block;   
 }
 
 @keyframes bounce2 {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes side {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(15px); }
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(15px); }
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 .hyppy {
-  animation: bounce 0.4s infinite;
+    animation: bounce 0.4s infinite;
 }
 
 .hyppy2 {
@@ -191,6 +190,43 @@ h3 {
 
 .hyppy3 {
     animation: side 0.5s infinite;
+}
+
+#juhlaKissa {
+    display: flex !important;
+    justify-content: center !important;
+    background-image: "images/desktop.ini";
+}
+
+#suru {
+    width: 15%;
+    height: auto;
+}
+
+.ilmapallot {
+    flex-wrap: wrap;
+    width: 15%;
+    height: auto;
+}
+
+#stopPainike {
+    display: flex !important;
+    justify-content: center !important;
+    width: 300px !important;
+    padding: 10px !important;
+    margin: 50px auto  !important;
+}
+
+#stopNappi {
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 10px;
+    font-size: x-large;
+    border-radius: 10px;
+}
+
+.varakuva {
+    width: 180px !important;
 }
 
 /*värejä talteen
