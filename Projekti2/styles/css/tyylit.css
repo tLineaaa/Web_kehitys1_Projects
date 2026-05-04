@@ -203,12 +203,6 @@ h3 {
     height: auto;
 }
 
-.ilmapallot {
-    flex-wrap: wrap;
-    width: 15%;
-    height: auto;
-}
-
 #stopPainike {
     display: flex !important;
     justify-content: center !important;

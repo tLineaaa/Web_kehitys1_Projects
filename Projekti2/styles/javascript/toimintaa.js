@@ -45,21 +45,15 @@ function haeAlbumit(artisti) {
                 this.classList.add("varakuva");
             };
 
-
-// "Selain katsoo sitä vähän kuin yrittäisit asentaa renkaat kahvikuppiin."
-// "JavaScript on joskus kuin innokas siivooja: jos annat sille väärän huoneen avaimet, se tyhjentää koko talon."
-// "Nyt koodisi pitäisi taas herätä henkiin ilman dramatiikkaa. JavaScript rakastaa tällaisia kirjoitusvirheitä – ne ovat sen lempivälipalaa."
-
-
             albumDiv.appendChild(kuva); // lisää kuva albumDiviin
             const albumiNimi = document.createElement("h3"); // määritellään documenttiin lisättäväksi h3
             albumiNimi.textContent = album.name; // sisältö on albumin nimi
             albumDiv.appendChild(albumiNimi); //lisää albumin nimi
 
             // Kesken, klikatessa saataisiin kappaleet
-            albumDiv.addEventListener("click", function() {
-                haeBiisit(artisti, album.name)
-            });
+            //albumDiv.addEventListener("click", function() {
+            //    haeBiisit(artisti, album.name)
+            //});
             
             albumitPaikka.appendChild(albumDiv);
         });
@@ -90,7 +84,7 @@ let sankariKissa = document.querySelector("#suru")
 const sankarinPaikka = document.querySelector("#juhlaKissa")
 
 function haeKisu() {
-    fetch(`https://api.thecatapi.com/v1/images/search?limit=50&breed_ids=sava,beng,norw,mcoo,ragd&api_key=${catApiKey}`) // hae apikeyn kanssa kuvat (määrä 10, rotu beng) - MUOKKAA?
+    fetch(`https://api.thecatapi.com/v1/images/search?limit=50&breed_ids=sava,beng,norw,mcoo,ragd&api_key=${catApiKey}`) // hae apikeyn kanssa kuvat (määrä 50, rotu sava, beng yms)
     
     .then((response) => response.json()) // palauta vastaus json muodossa
 
