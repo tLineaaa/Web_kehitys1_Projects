@@ -37,7 +37,8 @@ vastausta käsitellään ja kuinka hyödyntää haettua dataa omalla sivullaan.
 Lisäksi opin hakupalkin luonnista/toiminnasta myös tässä hyödyntäen APIa.  
 Funktioiden luonti alkoi jo käydä luontevammaksi tämän projektin myötä.  
   
-Bonuksensa opin CSS:n hyödyntämisestä "animaatioiden" luonnissa sekä äänitiedoston käytöstä.  
+Bonuksensa opin CSS:n hyödyntämisestä "animaatioiden" luonnissa, sekä yleisesti  
+äänitiedoston käytöstä.  
   
 Antaisin itselleni pisteitä 10/10 p.  
 
@@ -50,7 +51,7 @@ varmasti vielä jatkaa työskentelyä, jotta alkaa sujumaan sutjakkaammin.
 
 ## Sisällysluettelo:
 - [Tietoja sovelluksesta](#tietoja-sovelluksesta)
-- [Tunnetut virheet/bugit](#tunnetut-virheet/bugit)
+- [Tunnetut virheet/bugit](#tunnetut-virheet-tai-bugit)
 - [Kuvakaappaukset](#kuvakaappaukset)
 - [Teknologiat](#teknologiat)
 - [Asennus](#asennus)
@@ -68,19 +69,19 @@ Ylläri-osiossa voit klikata nappia ja aloittaa juhlat.
 Myös tässä on hyödynnetty APIa, joskin kissa-apia.
 
 
-## Tunnetut virheet/bugit
-API-avaimet ovat nyt kaikille näkyvillä, joten siitä GitHub voi herjata.
+## Tunnetut virheet tai bugit
+API-avaimet ovat nyt näkyvillä, joten siitä GitHub voi herjata.
 Avaimet voi piilottaa ja sen tekisin seuraavan vastaavan projektin kohdalla.
 
 ## Kuvakaappaukset
 
-# Etusivun malli: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen  
-![Etusivun malli: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen ](images/index.jpg)  
+**Etusivu: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen**  
+![Etusivu: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen ](images/index.jpg)  
 
-# Valittu artisti Kiraw + albumien tiedot kuvien kanssa 
+**Valittu artisti Kiraw + albumien tiedot kuvien kanssa** 
 ![Kissa API -puolen iloinen kissa ](images/albumit.jpg)  
 
-# Kissa API -puolen iloinen kissa  
+**Kissa API -puolen iloinen kissa**  
 ![Kissa API -puolen iloinen kissa ](images/ilokissa.jpg)  
 
 Kuvat: Taru Laine  
