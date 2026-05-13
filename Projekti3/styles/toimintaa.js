@@ -1,3 +1,5 @@
+// ! js-kirjasto
+// Taustakuvan elävöittäminen granim.js:n avulla https://sarcadass.github.io/granim.js/index.html
 var granimInstance = new Granim({
     element: '#canvas-image-blending',
     direction: 'top-bottom',
@@ -69,11 +71,6 @@ function haeAlbumit(artisti) {
             const albumiNimi = document.createElement("h3"); // määritellään documenttiin lisättäväksi h3
             albumiNimi.textContent = album.name; // sisältö on albumin nimi
             albumDiv.appendChild(albumiNimi); //lisää albumin nimi
-
-            // Kesken, klikatessa saataisiin kappaleet
-            //albumDiv.addEventListener("click", function() {
-            //    haeBiisit(artisti, album.name)
-            //});
             
             albumitPaikka.appendChild(albumDiv);
         });
@@ -93,3 +90,10 @@ if(etsi) {
             haeAlbumit(etsi.value); // aja funktio haeAlbumi() etsi-arvon mukaan
         }
 });}
+
+
+// jQueryn testaus
+$("#taustaSeis").click(function() {
+    granimInstance.pause()
+
+})
