@@ -133,6 +133,7 @@ const catApiKey = "live_Qq9TZXOog8U05SHE7mI2ELkWvNV4zC9D2p3DJYLqdRG7VqtsNKWQbHAo
 const ullatusPaikka = document.querySelector("#ullatusPaikka"); // määritellään paikka yllätykselle
 const kissaNappi = document.querySelector("#kissaNappi") // valikoidaan nappi
 const musiikki = new Audio("media/the_mountain-brazilian-phonk-505181.mp3"); // luodaan audio (haetaan kansiosta sound)
+musiikki.volume = 0.2; // musiikin äänenvoimakkuutta säädetty
 const tanssiTyyli = ["hyppy", "hyppy2", "hyppy3"]
 let i = 0;
 let sankariKissa = document.querySelector("#suru")

@@ -14,7 +14,7 @@ Projektin videoesittelyn url toimitettu palautuksen kommenttikentässä.
 
 ## Oma arvio työstä ja oman osaamisen kehittymisestä
 Projektini täyttää tehtävänannon vaatimukset:  
-jQueryä on käytetty AJAXin ja DOM-skriptauksen tekemiseen.
+jQueryä on käytetty DOM-skriptauksen tekemiseen.  
 Sovelluksen ulkoasussa on käytetty UI-kirjastoa (Bootstrap, jQuery UI + kevyet granim.js & anime.js)
 Koodi on julkaistu GitHubissa ja sovellus GitHubin kautta.
 Videodemo sekä projektiraportit on laadittu.
@@ -24,6 +24,9 @@ Hyödynsin näitä oppeja lisämäällä animoinnin sekä taustakuvaan,
 että "Valitse artisti" -otsikkoon (h3).  
 Ekstrana lisäsin myös tausta-animaation pysäytyspanikkeen (käytettävyys huomioiden).  
 
+jQuery UI:ta käytin, jotta albumeita voi liikuttaa / järjestää.  
+Samaa metodia on käytetty myös ullatus.html:n juhlaKissa-kuvan kanssa.
+
 Harjoittelin ja opin myös jQueryn käyttöä, jota hyödynsin projektissa  
 lyhentääkseni koodia.  
   
@@ -31,9 +34,9 @@ Antaisin itselleni pisteitä 10/10 p.
 
 
 ## Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka
-Kiitos, että annat aina tilaa kysymyksille ja keskustelulle.  
-Tämä projekti tuntui alkuun haastavalta ja aiheen parissa voisin  
-varmasti vielä jatkaa työskentelyä, jotta alkaa sujumaan sutjakkaammin.  
+Kiitos vapaudesta luovuuden suhteen! Tämä mahdollistaa erilaisten projektien testailun mielenkiinnon kohteiden mukaan,  
+ja avaa ovia oppia ylimääräistä (koska innostuminen ja uteliaisuus ohjaavat projektin kanssa eteenpäin).  
+Kannustat opiskelijoita myös tilanteissa, joissa he kokeilevat kurssin ydinrakenteen ulkopuolisia teemoja!  
 
 
 ## Sisällysluettelo:
@@ -48,12 +51,17 @@ varmasti vielä jatkaa työskentelyä, jotta alkaa sujumaan sutjakkaammin.
 
 
 ## Tietoja sovelluksesta
-Sovellus on Musiikki API, jossa voit etsiä joko alasvetovalikosta
-tai hakukentään kirjoittaen haluamaasi artistia. Sivulle tulostuu
-näkymä haetun artistin albumeista kuvan ja tekstin kera.
+Sovellus on Musiikki API, jossa voit etsiä joko alasvetovalikosta  
+tai hakukentään kirjoittaen haluamaasi artistia. Sivulle tulostuu  
+näkymä haetun artistin albumeista kuvan ja tekstin kera.  
 
-Ylläri-osiossa voit klikata nappia ja aloittaa juhlat.
-Myös tässä on hyödynnetty APIa, joskin kissa-apia.
+Voit järjestää hakemasi albumit haluamaasi järjestykseen.  
+Taustalla pyörii animoitu taustakuva, jonka voi "Pysäytä tausta"-painikkeen  
+avulla pysäyttää.  
+
+Ylläri-osiossa voit klikata nappia, joka aloittaa juhlat.  
+Myös tässä on hyödynnetty APIa, joskin kissa-apia.  
+JuhlaKissaa voi liikuttaa raahaamalla ja juhlat voi pysäyttää "Stop"-painiketta klikkaamalla.  
 
 
 ## Tunnetut virheet tai bugit
@@ -62,14 +70,14 @@ Avaimet voi piilottaa ja sen tekisin seuraavan vastaavan projektin kohdalla.
 
 ## Kuvakaappaukset
 
-**Etusivu: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen**  
-![Etusivu: Valitse artisti alasvetovalikosta tai etsi hakukenttään kirjoittaen ](images/index.jpg)  
+**Etusivu: sivulle saapuessa otsikko "Valitse artisti" on animoitu**  
+![Etusivu: sivulle saapuessa otsikko "Valitse artisti" on animoitu ](media/otsikkoAnimoitu.png)  
 
-**Valittu artisti Kiraw + albumien tiedot kuvien kanssa** 
-![Kissa API -puolen iloinen kissa ](images/albumit.jpg)  
+**Albumeita voi liikuttaa ja järjestää uudelleen** 
+![Albumeita voi liikuttaa ja järjestää uudelleen ](media/dragndrop.png)  
 
-**Kissa API -puolen iloinen kissa**  
-![Kissa API -puolen iloinen kissa ](images/ilokissa.jpg)  
+**Juhlakissaa voi liikuttaa kavereiden joukkoon**  
+![Juhlakissaa voi liikuttaa kavereiden joukkoon ](media/partywithfriends.png)  
 
 Kuvat: Taru Laine  
 

@@ -25,13 +25,6 @@
     z-index: -1;
 }
 
-/*body {
-    background-color: #ffe7f1 !important;
-    background-image: url("../../images/colour-sound-wave-e1452611417196.jpg") !important;
-    color: #4A4A4A !important;
-    background-size: 100% 150%;
-}*/
-
 .ekaDiv {
     display: flex !important;
     justify-content: center !important;
@@ -185,7 +178,8 @@ h3 {
 #ullatusPaikka img {
     width: 100%;
     height: auto;
-    display: block;   
+    display: block;  
+    border-radius: 45%;  /*vähän pyöreyttä kissavieraskuviin*/
 }
 
 @keyframes bounce2 {
@@ -218,7 +212,6 @@ h3 {
 #juhlaKissa {
     display: flex !important;
     justify-content: center !important;
-    background-image: "media/desktop.ini";
 }
 
 #suru {
