@@ -29,6 +29,8 @@ Samaa metodia on käytetty myös ullatus.html:n juhlaKissa-kuvan kanssa.
 
 Harjoittelin ja opin myös jQueryn käyttöä, jota hyödynsin projektissa  
 lyhentääkseni koodia.  
+Sanoisin, että myös debuggaus taitoni alkavat kehittymään.  
+Jonkin toimimattomuuden ymmärrys ja korjaus alkaa olla helpompaa kuin aiemmin.  
   
 Antaisin itselleni pisteitä 10/10 p.  
 
