@@ -85,6 +85,13 @@ $("#valinta").change(function () {
     }
 });
 
+// etsi-valikkoon jQuery + this-testaus
+$("#exampleDataList").on('input', function () {
+    if ($(this).val() !== "") {
+        haeAlbumit($(this).val());
+    }
+});
+
 // sama kuin yllä, mutta ilman jQuerya
 //if(valinta) {
 //    valinta.addEventListener('change', function() { // kuuntelija, joka reagoi siihen, kun vaihdetaan alasvetovalikon valintaa
@@ -92,12 +99,12 @@ $("#valinta").change(function () {
 //            haeAlbumit(valinta.value); // aja funktio haeAlbumit() valinta-arvon mukaan
 //        }});}
 
-if(etsi) {
-    etsi.addEventListener('input', function() { // kuuntelija, joka reagoi hakukentän syötteeseen
-        if (etsi.value !== "") { // kunhan ei ole tyhjä kentä,
-            haeAlbumit(etsi.value); // aja funktio haeAlbumi() etsi-arvon mukaan
-        }
-});}
+//if(etsi) {
+//    etsi.addEventListener('input', function() { // kuuntelija, joka reagoi hakukentän syötteeseen
+//        if (etsi.value !== "") { // kunhan ei ole tyhjä kentä,
+//            haeAlbumit(etsi.value); // aja funktio haeAlbumi() etsi-arvon mukaan
+//        }
+//});}
 
 
 // jQueryn testaus
