@@ -118,7 +118,7 @@ const { animate, stagger, splitText } = anime; // nämä toiminnot animejs:stä
 const { chars } = splitText('h3', { words: false, chars: true, includeSpaces: true }); // määritellään kohde, säilytetään välilyönnit
 
 // animoidaan merkit (ei pelkät sanat, kts. yllä)
-if ('h3') {
+if (document.querySelector('h3')) {
     animate(chars, {
   // Property keyframes
         y: [
