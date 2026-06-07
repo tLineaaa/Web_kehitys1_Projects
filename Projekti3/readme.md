@@ -65,8 +65,10 @@ JuhlaKissaa voi liikuttaa raahaamalla ja juhlat voi pysäyttää "Stop"-painiket
 
 
 ## Tunnetut virheet tai bugit
-API-avaimet ovat nyt näkyvillä, joten siitä GitHub voi herjata.
-Avaimet voi piilottaa ja sen tekisin seuraavan vastaavan projektin kohdalla.
+API-avaimet ovat nyt näkyvillä, joten siitä GitHub voi herjata.  
+Pienemmällä ruudulla hampurilaisvalikko on melko pieni, samoin surullinenKissa ja juhlaKissa kutistuu kovasti.  
+Taustan pysäytyspainike piiloutuu hampurilaisvalikon taakse (käytettävyyden kannalta tulisi olla näkyvissä kaiken aikaa).  
+Alasvetovalikkoon jää artistin nimi jumiin, vaikka haettaisiin eri artisti hakuvalikkoon kirjoittamalla.  
 
 ## Kuvakaappaukset
 
@@ -83,15 +85,14 @@ Kuvat: Taru Laine
 
 
 ## Teknologiat
-Projektissa on hyödynnetty niin HTMLää, CSSää kuin JavaScriptiä.
-Html:n navikointi- ja hakupalkin muotoilussa on hyödynnetty Bootstrapia.
-Muutoin muotoilu on luotu tyylit.css -tiedostoon.
-Tapahtumat on luotu DOM-skriptauksella toimintaa.js -tiedostoon.
+Projektissa on käytetty HTMLää, CSSää ja JavaScriptiä.
+Aiempaan versioon (Projekti2) verrattuna, on nyt lisätty JavaScript-kirjastojen hyödyntämistä:  
+jQuery, jQuery UI, granim.js ja animejs.
 
-Pääpaino on JavaScriptin puolella, jossa suoritetaan AJAX-kutsu (fetch-kutsu) kahteen
-eri API-osoitteeseen. Tämän jälkeen luodaan halutuille tiedoille paikat ja
-näytetään tuodut tiedot.
-
+jQuerya on käytetty osassa DOM-skriptausta.
+jQuery UI mahdollistaa albumien ja juhlakissan raahaus- ja uudelleenjärjestämistoiminnot.
+granim.js animoi taustakuvan ja animejs animoi etusivun "Valitse artisti"-otsikon.
+Bootstrapia on hyödynnetty navikointi- ja hakupalkeissa.
 
 ## Asennus
 Sovellus toimii suoraan github.io:ssa [Musiikki API](https://tlineaaa.github.io/Web_kehitys1_Projects/Projekti3/index.html)  
@@ -99,6 +100,7 @@ Sovellus toimii suoraan github.io:ssa [Musiikki API](https://tlineaaa.github.io/
 Linkin avattua etusivulla on alasvetovalikko, jossa lukee "Avaa valikko".  
 Sitä klikkaamalla voi valikoida listalta artistin, jonka jälkeen valitun artistin  
 albumit tulevat näkyviin nimien sekä albumikuvien kera.  
+Klikkaamalla ja raahamalla albumia, voit järjestää albumit uudelleen.  
      
 Oikeassa yläkulmassa on hakukenttä, jonka vieresssä lukee "Etsi artistin mukaan".  
 Kun kohtaan "Kirjoita tähän..." alkaa kirjoittamaan haluamansa artistin tai bändin nimeä,   
@@ -109,6 +111,7 @@ Nyt ruudulla näkyy "Ei saatavilla"-kuvasta tuttu surullinen kissa,
 jonka alapuolella on "Party button". Jos klikkaat painiketta,  
 alkaa musiikki soida, surullinen kissa muuttuu iloiseksi ja  
 sen kaverit ilmestyvät tanssimaan.  
+Voit siirtää iloiseksi muuttunutta kissaa raahamalla sitä ruudulla hiiren avulla.  
 Kun on aika lopettaa bileet, klikkaa "Stop"-painiketta.  
 
 
@@ -120,11 +123,13 @@ sekä omaa aiempaa [API-projektiani](https://github.com/tLineaaa/Web_kehitys1_Pr
 Käytin ChatGPT:tä debuggauksessa.  
  
 
-Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:  
-[Bootstrap](https://getbootstrap.com/)  
-[Animejs](https://animejs.com/documentation/getting-started/)  
-[Granim.js](https://sarcadass.github.io/granim.js/)  
+Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:
 [Acharya, D. P. 2025. The Best JavaScript Libraries and Frameworks. Kinsta](https://kinsta.com/blog/javascript-libraries/#the-most-popular-javascript-libraries)  
+[Animejs](https://animejs.com/documentation/getting-started/)  
+[Bootstrap](https://getbootstrap.com/)  
+[Granim.js](https://sarcadass.github.io/granim.js/)  
+[jQuery](https://jqueryui.com/draggable/#sortable)  
+[Mimo](https://mimo.org/glossary/css/rounding-an-image)  
 
 Musiikki: [Brazilian Phonk by The_Mountain](https://pixabay.com/music/edm-brazilian-phonk-505181/)
 
