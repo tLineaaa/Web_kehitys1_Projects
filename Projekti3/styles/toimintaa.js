@@ -118,22 +118,23 @@ const { animate, stagger, splitText } = anime; // nämä toiminnot animejs:stä
 const { chars } = splitText('h3', { words: false, chars: true, includeSpaces: true }); // määritellään kohde, säilytetään välilyönnit
 
 // animoidaan merkit (ei pelkät sanat, kts. yllä)
-animate(chars, {
+if ('h3') {
+    animate(chars, {
   // Property keyframes
-  y: [
-    { to: '-2.75rem', ease: 'outExpo', duration: 600 },
-    { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
-  ],
+        y: [
+            { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+            { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+        ],
   // Property specific parameters
-  rotate: {
-    from: '-1turn',
-    delay: 0
-  },
-  delay: stagger(50),
-  ease: 'inOutCirc',
-  loopDelay: 1000,
-  loop: false // toistaa vain kerran, jotta otsikko on luettavissa eikä rasittava
-});
+        rotate: {
+            from: '-1turn',
+            delay: 0
+        },
+        delay: stagger(50),
+        ease: 'inOutCirc',
+        loopDelay: 1000,
+        loop: false // toistaa vain kerran, jotta otsikko on luettavissa eikä rasittava
+});}
 
 // kissabileet
 const catApiKey = "live_Qq9TZXOog8U05SHE7mI2ELkWvNV4zC9D2p3DJYLqdRG7VqtsNKWQbHAoW8rljGfT"; // apiKey
