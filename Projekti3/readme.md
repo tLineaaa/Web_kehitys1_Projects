@@ -127,12 +127,13 @@ Käytin ChatGPT:tä debuggauksessa.
 
 Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:
 [Acharya, D. P. 2025. The Best JavaScript Libraries and Frameworks. Kinsta](https://kinsta.com/blog/javascript-libraries/#the-most-popular-javascript-libraries)  
-[Animejs](https://animejs.com/documentation/getting-started/)  
+[Animejs](https://animejs.com/documentation/getting-started/) 
+[BigBinary Academy](https://courses.bigbinaryacademy.com/)
 [Bootstrap](https://getbootstrap.com/)  
 [Granim.js](https://sarcadass.github.io/granim.js/)  
 [jQuery](https://jqueryui.com/draggable/#sortable)  
 [Mimo](https://mimo.org/glossary/css/rounding-an-image)  
-[Stack Overflow](https://stackoverflow.com/questions)
+[Stack Overflow](https://stackoverflow.com/questions)  
 
 Musiikki: [Brazilian Phonk by The_Mountain](https://pixabay.com/music/edm-brazilian-phonk-505181/)
 
