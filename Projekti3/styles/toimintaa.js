@@ -144,6 +144,8 @@ const musiikki = new Audio("media/the_mountain-brazilian-phonk-505181.mp3"); // 
 musiikki.volume = 0.2; // musiikin äänenvoimakkuutta säädetty
 const tanssiTyyli = ["hyppy", "hyppy2", "hyppy3"]
 let i = 0;
+const reunaTyyli = ["tyyli", "tyyli2", "tyyli3"]
+let a = 0;
 let sankariKissa = document.querySelector("#suru")
 const sankarinPaikka = document.querySelector("#juhlaKissa")
 
@@ -160,8 +162,9 @@ function haeKisu() {
         data.forEach(kissa => { // jokaista kissaa kohti
         const uusiKissaKuva = document.createElement("img"); // luo kuva
         uusiKissaKuva.src = kissa.url; // kuvan lähde on kissa.url (saatu fetchillä)
-        uusiKissaKuva.classList.add("kisu", tanssiTyyli[i % 3]); // lisätään class ja tanssityyli
+        uusiKissaKuva.classList.add("kisu", tanssiTyyli[i % 3], reunaTyyli [a % 3]); // lisätään class ja tanssityyli
         i++;
+        a++;
         ullatusPaikka.appendChild(uusiKissaKuva); // lisää kuva ullatusPaikkaan
         });
     })

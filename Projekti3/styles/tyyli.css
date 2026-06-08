@@ -214,6 +214,23 @@ h3 {
     animation: side 0.5s infinite;
 }
 
+.tyyli {
+    box-shadow: 1px 1px 25px #ff4081;
+}
+
+.tyyli2 {
+    box-shadow: 1px 1px 25px #0dcaf0;
+}
+
+.tyyli3 {
+    box-shadow: 1px 1px 25px #ffdc40;
+}
+
+.jeeKissa {
+    border-color: #ff4081, #0dcaf0, #ffdc40; 
+    box-shadow: 1 1 35px #ffdc40;
+}
+
 #juhlaKissa {
     display: flex !important;
     justify-content: center !important;
