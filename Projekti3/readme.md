@@ -132,6 +132,7 @@ Hyödynsin myös vinkkejä ja keskustelujen kommentteja sivustoilta:
 [Granim.js](https://sarcadass.github.io/granim.js/)  
 [jQuery](https://jqueryui.com/draggable/#sortable)  
 [Mimo](https://mimo.org/glossary/css/rounding-an-image)  
+[Stack Overflow](https://stackoverflow.com/questions)
 
 Musiikki: [Brazilian Phonk by The_Mountain](https://pixabay.com/music/edm-brazilian-phonk-505181/)
 
